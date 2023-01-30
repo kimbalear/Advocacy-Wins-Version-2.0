@@ -1,43 +1,242 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "abstract/settings";
 
+$clr1: #FDF4E7;
 
-@import "abstract/settings",
-"abstract/mixins",
-"base/legends";
-
-@import "base/theme_default",
-"base/animations";
-
-@import "components/timeline",
-"components/contributions",
-"components/card",
-"components/selectbox",
-"components/checkboxes",
-"components/dialogs",
-"components/btns",
-"components/multiselect";
-
-::-webkit-scrollbar {
-    background-color: rgba(119, 113, 106, 0.1);
-    height: 4px;
-    width: 4px;
-    border-radius: 2px;
+.jss215 {
+    background-color: #FDF4E7;
+}
+.jss424{
+    border: 1px solid #7d7d7d;
 }
 
-/* background of the scrollbar except button or resizer */
-::-webkit-scrollbar-track {
-    background-color: rgba(119, 113, 106, 0.1);
-    border-radius: 4px;
+.advc {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-auto-columns: 1fr;
+    gap: 8px 8px;
+    grid-auto-flow: row;
+    padding: 10px;
+    border: 1px solid #7d7d7d;
+    margin-bottom: 20px;
+    grid-template-areas:
+        "advc_title"
+        "advc_stage";
 
+    .advc_title {
+        grid-area: advc_title;
+
+        label {
+            font-size: 16px;
+            font-weight: 500;
+        }
+    }
+
+    .advc_stage {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr;
+        gap: 0px 8px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "lb slctbox";
+        grid-area: advc_stage;
+
+        .lb {
+            grid-area: lb;
+            justify-self: stretch;
+            align-self: center;
+
+            label {
+                padding-left: 7px;
+
+                Span {
+                    color: red;
+                }
+            }
+        }
+
+        .slctbox {
+            grid-area: slctbox;
+
+            #nTbcBfQZW9X-DTIsk9cDl8u-val {
+                width: 100%;
+            }
+        }
+    }
 }
 
-/* scrollbar itself */
-::-webkit-scrollbar-thumb {
-    background-color: $clr1;
-    border-radius: 4px;
+.card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto;
+    grid-auto-columns: 1fr;
+    gap: 8px 8px;
+    grid-auto-flow: row;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #7d7d7d;
+    grid-template-areas:
+        "lb_need g_need"
+        "lb_brief g_brief"
+        "lb_details g_details";
+
+    .lb_need {
+        grid-area: lb_need;
+        justify-self: stretch;
+        align-self: center;
+
+        label {
+            padding-left: 7px;
+
+            Span {
+                color: red;
+            }
+        }
+    }
+
+    .g_need {
+        grid-area: g_need;
+
+        #nTbcBfQZW9X-sA82BaO7QQa-val {
+            width: 100%;
+        }
+    }
+
+    .lb_brief {
+        grid-area: lb_brief;
+        justify-self: stretch;
+        align-self: center;
+
+        label {
+            padding-left: 7px;
+
+            Span {
+                color: red;
+            }
+        }
+    }
+
+    .g_brief {
+        grid-area: g_brief;
+
+        #nTbcBfQZW9X-rHGuINTVs2L-val {
+            width: 100%;
+        }
+    }
+
+    .lb_details {
+        grid-area: lb_details;
+        justify-self: stretch;
+        align-self: center;
+
+        label {
+            padding-left: 7px;
+
+            Span {
+                color: red;
+            }
+        }
+    }
+
+    .g_details {
+        grid-area: g_details;
+
+        #nTbcBfQZW9X-w7mtkLzijNL-val {
+            width: 100%;
+        }
+    }
 }
 
-/* set button(top and bottom of the scrollbar) */
-::-webkit-scrollbar-button {
-    display: none;
+.uploads {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-auto-columns: 1fr;
+    gap: 8px 8px;
+    grid-auto-flow: row;
+    padding: 10px;
+    border: 1px solid #7d7d7d;
+    grid-template-areas:
+        "uft uit"
+        "uf1 ui1"
+        "uf2 ui2"
+        "uf3 ui3";
+
+    .uft {
+        grid-area: uft;
+        align-self: center;
+        padding: 8px;
+        border-bottom: 1px solid #7d7d7d;
+
+        label {
+            font-size: 16px;
+            font-weight: 500;
+            padding-left: 7px;
+
+            Span {
+                color: red;
+            }
+        }
+    }
+
+    .uit {
+        grid-area: uit;
+        align-self: center;
+        padding: 8px;
+        border-bottom: 1px solid #7d7d7d;
+
+        label {
+            font-size: 16px;
+            font-weight: 500;
+            padding-left: 7px;
+
+            Span {
+                color: red;
+            }
+        }
+    }
+
+    .uf1 {
+        grid-area: uf1;
+        justify-self: start;
+        align-self: center;
+        padding: 8px;
+    }
+
+    .ui1 {
+        grid-area: ui1;
+        justify-self: start;
+        align-self: center;
+        padding: 8px;
+    }
+
+    .uf2 {
+        grid-area: uf2;
+        justify-self: start;
+        align-self: center;
+        padding: 8px;
+    }
+
+    .ui2 {
+        grid-area: ui2;
+        justify-self: start;
+        align-self: center;
+        padding: 8px;
+    }
+
+    .uf3 {
+        grid-area: uf3;
+        justify-self: start;
+        align-self: center;
+        padding: 8px;
+    }
+
+    .ui3 {
+        grid-area: ui3;
+        justify-self: start;
+        align-self: center;
+        padding: 8px;
+    }
 }
