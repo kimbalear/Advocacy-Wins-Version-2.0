@@ -1,12 +1,5 @@
 <script src="../../dhis-web-commons/javascripts/jquery.min.js"></script>
-<style type="text/css">
-
-#advWinsForm {
-  width: 100%;
-  height: auto;
-}
-
-.jss215 {
+<style type="text/css">.jss215 {
   background-color: #FDF4E7;
 }
 
@@ -62,17 +55,22 @@
 
 .card {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto auto;
+  grid-auto-columns: 1fr;
   gap: 8px 8px;
   grid-auto-flow: row;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #7d7d7d;
-  grid-template-areas: "lb_need" "g_need" "lb_brief" "g_brief" "lb_details" "g_details";
+  grid-template-areas: "lb_need" "lb_brief" "lb_details g_details";
 }
 .card .lb_need {
   grid-area: lb_need;
+  justify-self: stretch;
+  align-self: center;
+  width: 100%;
+  clear: both;
 }
 .card .lb_need label {
   padding-left: 7px;
@@ -83,8 +81,13 @@
 .card .g_need {
   grid-area: g_need;
 }
+.card .g_need #nTbcBfQZW9X-sA82BaO7QQa-val {
+  width: 100%;
+}
 .card .lb_brief {
   grid-area: lb_brief;
+  justify-self: stretch;
+  align-self: center;
 }
 .card .lb_brief label {
   padding-left: 7px;
@@ -95,8 +98,13 @@
 .card .g_brief {
   grid-area: g_brief;
 }
+.card .g_brief #nTbcBfQZW9X-rHGuINTVs2L-val {
+  width: 100%;
+}
 .card .lb_details {
   grid-area: lb_details;
+  justify-self: stretch;
+  align-self: center;
 }
 .card .lb_details label {
   padding-left: 7px;
@@ -107,64 +115,62 @@
 .card .g_details {
   grid-area: g_details;
 }
-.card .optionSetSelectFieldForCustomForm_defaultCustomContainer__3VCN0, .card .textFieldCustomForm_defaultCustomContainer__1R60w, .card .userNameFieldCustomForm_defaultCustomContainer__3UUau {
+.card .g_details #nTbcBfQZW9X-w7mtkLzijNL-val {
   width: 100%;
-}
-
-.title_uploads {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  gap: 8px 8px;
-  grid-auto-flow: row;
-  margin-bottom: 8px;
-  grid-template-areas: "uft uit";
-}
-.title_uploads .uft {
-  grid-area: uft;
-}
-.title_uploads .uft label {
-  font-size: 16px;
-  font-weight: 500;
-}
-.title_uploads .uft label Span {
-  color: red;
-}
-.title_uploads .uit {
-  grid-area: uit;
-}
-.title_uploads .uit label {
-  font-size: 16px;
-  font-weight: 500;
-}
-.title_uploads .uit label Span {
-  color: red;
 }
 
 .uploads {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr auto auto auto;
+  grid-template-rows: auto auto auto auto;
   grid-auto-columns: 1fr;
   gap: 8px 8px;
   grid-auto-flow: row;
   padding: 10px;
   border: 1px solid #7d7d7d;
-  grid-template-areas: "uf1 ui1" "uf2 ui2" "uf3 ui3";
+  grid-template-areas: "uft uit" "uf1 ui1" "uf2 ui2" "uf3 ui3";
+}
+.uploads .uft {
+  grid-area: uft;
+  align-self: center;
+  padding: 8px;
+}
+.uploads .uft label {
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 7px;
+}
+.uploads .uft label Span {
+  color: red;
+}
+.uploads .uit {
+  grid-area: uit;
+  align-self: center;
+  padding: 8px;
+  border-bottom: 1px solid #7d7d7d;
+}
+.uploads .uit label {
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 7px;
+}
+.uploads .uit label Span {
+  color: red;
 }
 .uploads .uf1 {
   grid-area: uf1;
   justify-self: start;
   align-self: center;
   padding: 8px;
+  border-top: 1px solid #7d7d7d;
 }
 .uploads .ui1 {
   grid-area: ui1;
   justify-self: start;
   align-self: center;
   padding: 8px;
+  border-top: 1px solid #7d7d7d;
 }
 .uploads .uf2 {
   grid-area: uf2;
@@ -192,95 +198,66 @@
 }
 
 /*# sourceMappingURL=main.css.map */
-
-
-
 </style>
 <div class="loaderDiv" id="formLoadingDiv" style="display: none;"><br />
-  <br />
-  <br />
-  <img src="../images/ajax-loader-circle.gif" /><br />
-  <br />
-  &nbsp;
-  <p><span>Loading data and setting up the form</span>...</p>
+<br />
+<br />
+<img src="../images/ajax-loader-circle.gif" /><br />
+<br />
+&nbsp;
+<p><span>Loading data and setting up the form</span>...</p>
 </div>
 
 <div id="advWinsForm" style="display:block;">
-  <div class="advc">
-    <div class="advc_title"><label>Advocacy Tracker <a
-          href="https://docs.google.com/document/d/172FH65oMaIc2fFI3Ug0QT0TybZBPODsKIhg9Dm4Pd78"
-          style="font-style: italic;font-size: 10px;" target="_blank">( v 0.3 )</a> </label></div>
+<div class="advc">
+<div class="advc_title"><label>Advocacy Tracker <a href="https://docs.google.com/document/d/172FH65oMaIc2fFI3Ug0QT0TybZBPODsKIhg9Dm4Pd78" style="font-style: italic;font-size: 10px;" target="_blank">( v 0.3 )</a> </label></div>
 
-    <div class="advc_stage">
-      <div class="lb"><label>Advocacy Stage <span>*</span></label></div>
+<div class="advc_stage">
+<div class="lb"><label>Advocacy Stage <span>*</span></label></div>
 
-      <div class="slctbox"><input id="nTbcBfQZW9X-DTIsk9cDl8u-val" name="entryfield"
-          title="Adv Tracker 1 - Advocacy Stage" value="[ Adv Tracker 1 - Advocacy Stage ]" /></div>
-    </div>
-  </div>
+<div class="slctbox"><input id="nTbcBfQZW9X-DTIsk9cDl8u-val" name="entryfield" title="Adv Tracker 1 - Advocacy Stage" value="[ Adv Tracker 1 - Advocacy Stage ]" /></div>
+</div>
+</div>
 
-  <div class="card">
+<div class="card">
+<div class="lb_need"><label keyword="opt_c:Default_Need">What SRHRJ need is this related to?</label></div>
 
-    <div class="lb_need">
-      <label keyword="opt_c:Default_Need">What SRHRJ need is this related to?</label>
-    </div>
+<div class="g_need"><input id="nTbcBfQZW9X-sA82BaO7QQa-val" name="entryfield" title="Adv Tracker 1 - Need" value="[ Adv Tracker 1 - Need ]" /></div>
 
-    <div class="g_need">
-      <input id="nTbcBfQZW9X-sA82BaO7QQa-val" name="entryfield" title="Adv Tracker 1 - Need"
-        value="[ Adv Tracker 1 - Need ]" />
-      </div>
+<div name="advTracker1NeedOtherField" style="display:none;"><label keyword="opt_c:Default_Other_need">If &quot;other&quot;, please describe. (Max 50 characters)?</label></div>
 
-    <div name="advTracker1NeedOtherField" style="display:none;"><label keyword="opt_c:Default_Other_need">If
-        &quot;other&quot;, please describe. (Max 50 characters)?</label></div>
+<div name="advTracker1NeedOtherField" style="display:none;"><input id="nTbcBfQZW9X-J7LzW2muqTp-val" name="entryfield" title="Adv Tracker 1 - Other need" value="[ Adv Tracker 1 - Other need ]" /></div>
 
-    <div name="advTracker1NeedOtherField" style="display:none;"><input id="nTbcBfQZW9X-J7LzW2muqTp-val"
-        name="entryfield" title="Adv Tracker 1 - Other need" value="[ Adv Tracker 1 - Other need ]" /></div>
+<div><label keyword="brief">Brief (120 ch)</label></div>
 
-    <div><label keyword="brief">Brief (120 ch)</label></div>
+<div><input id="nTbcBfQZW9X-rHGuINTVs2L-val" name="entryfield" title="Adv Tracker 1 - Brief" value="[ Adv Tracker 1 - Brief ]" /></div>
 
-    <div><input id="nTbcBfQZW9X-rHGuINTVs2L-val" name="entryfield" title="Adv Tracker 1 - Brief"
-        value="[ Adv Tracker 1 - Brief ]" /></div>
+<div><label keyword="detail">Detail</label></div>
 
-    <div><label keyword="detail">Detail</label></div>
+<div><input id="nTbcBfQZW9X-w7mtkLzijNL-val" name="entryfield" title="Adv Tracker 1 - Detail" value="[ Adv Tracker 1 - Detail ]" /></div>
 
-    <div><input id="nTbcBfQZW9X-w7mtkLzijNL-val" name="entryfield" title="Adv Tracker 1 - Detail"
-        value="[ Adv Tracker 1 - Detail ]" /></div>
+<div name="lessonsLearnedField" style="display:none;"><label keyword="lessonsLearned">Lessons Learned</label></div>
 
-    <div name="lessonsLearnedField" style="display:none;"><label keyword="lessonsLearned">Lessons Learned</label></div>
+<div name="lessonsLearnedField" style="display:none;"><input id="nTbcBfQZW9X-CRxBaKd9gXn-val" name="entryfield" title="Adv Tracker 1 - Lessons Learned" value="[ Adv Tracker 1 - Lessons Learned ]" /></div>
+</div>
 
-    <div name="lessonsLearnedField" style="display:none;"><input id="nTbcBfQZW9X-CRxBaKd9gXn-val" name="entryfield"
-        title="Adv Tracker 1 - Lessons Learned" value="[ Adv Tracker 1 - Lessons Learned ]" /></div>
-  </div>
+<div class="uploads" name="fileFields">
+<div class="uft"><label keyword="fileUpload">Upload documents</label></div>
 
-  <div class="title_uploads">
-    <div class="uft">
-      <label keyword="fileUpload">Upload documents</label>
-    </div>
-    <div class="uit">
-      <label>Upload images</label>
-    </div>
-  </div>
+<div class="uit"><label>Upload images</label></div>
 
-  <div class="uploads" name="fileFields">.
+<div class="uf1"><input id="nTbcBfQZW9X-HQne4xhecd0-val" name="entryfield" title="Adv Tracker 1 - File 1" value="[ Adv Tracker 1 - File 1 ]" /></div>
 
-    <div class="uf1"><input id="nTbcBfQZW9X-HQne4xhecd0-val" name="entryfield" title="Adv Tracker 1 - File 1"
-        value="[ Adv Tracker 1 - File 1 ]" /></div>
+<div class="ui1"><input id="nTbcBfQZW9X-EfAIFxequNP-val" name="entryfield" title="Adv Tracker 1 - Image 1" value="[ Adv Tracker 1 - Image 1 ]" /></div>
 
-    <div class="ui1"><input id="nTbcBfQZW9X-EfAIFxequNP-val" name="entryfield" title="Adv Tracker 1 - Image 1"
-        value="[ Adv Tracker 1 - Image 1 ]" /></div>
+<div class="uf2"><input id="nTbcBfQZW9X-RlDreRbw0ms-val" name="entryfield" title="Adv Tracker 1 - File 2" value="[ Adv Tracker 1 - File 2 ]" /></div>
 
-    <div class="uf2"><input id="nTbcBfQZW9X-RlDreRbw0ms-val" name="entryfield" title="Adv Tracker 1 - File 2"
-        value="[ Adv Tracker 1 - File 2 ]" /></div>
+<div class="ui2"><input id="nTbcBfQZW9X-WdTQNq3sKxA-val" name="entryfield" title="Adv Tracker 1 - Image 2" value="[ Adv Tracker 1 - Image 2 ]" /></div>
 
-    <div class="ui2"><input id="nTbcBfQZW9X-WdTQNq3sKxA-val" name="entryfield" title="Adv Tracker 1 - Image 2"
-        value="[ Adv Tracker 1 - Image 2 ]" /></div>
+<div class="uf3"><input id="nTbcBfQZW9X-lLqmr26KzfY-val" name="entryfield" title="Adv Tracker 1 - File 3" value="[ Adv Tracker 1 - File 3 ]" /></div>
 
-    <div class="uf3"><input id="nTbcBfQZW9X-lLqmr26KzfY-val" name="entryfield" title="Adv Tracker 1 - File 3"
-        value="[ Adv Tracker 1 - File 3 ]" /></div>
-
-    <div class="ui3"><input id="nTbcBfQZW9X-iMjmZpoX5og-val" name="entryfield" title="Adv Tracker 1 - Image 3"
-        value="[ Adv Tracker 1 - Image 3 ]" /></div>
-  </div>
+<div class="ui3"><input id="nTbcBfQZW9X-iMjmZpoX5og-val" name="entryfield" title="Adv Tracker 1 - Image 3" value="[ Adv Tracker 1 - Image 3 ]" /></div>
+</div>
 </div>
 <script>
   console.log("============= START FORM ");

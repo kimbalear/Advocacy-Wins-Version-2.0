@@ -1,3 +1,8 @@
+#advWinsForm {
+  width: 100%;
+  height: auto;
+}
+
 .jss215 {
   background-color: #FDF4E7;
 }
@@ -54,20 +59,17 @@
 
 .card {
   display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto auto auto;
-  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto auto;
   gap: 8px 8px;
   grid-auto-flow: row;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #7d7d7d;
-  grid-template-areas: "lb_need g_need" "lb_brief g_brief" "lb_details g_details";
+  grid-template-areas: "lb_need" "g_need" "lb_brief" "g_brief" "lb_details" "g_details";
 }
 .card .lb_need {
   grid-area: lb_need;
-  justify-self: stretch;
-  align-self: center;
 }
 .card .lb_need label {
   padding-left: 7px;
@@ -78,13 +80,8 @@
 .card .g_need {
   grid-area: g_need;
 }
-.card .g_need #nTbcBfQZW9X-sA82BaO7QQa-val {
-  width: 100%;
-}
 .card .lb_brief {
   grid-area: lb_brief;
-  justify-self: stretch;
-  align-self: center;
 }
 .card .lb_brief label {
   padding-left: 7px;
@@ -95,13 +92,8 @@
 .card .g_brief {
   grid-area: g_brief;
 }
-.card .g_brief #nTbcBfQZW9X-rHGuINTVs2L-val {
-  width: 100%;
-}
 .card .lb_details {
   grid-area: lb_details;
-  justify-self: stretch;
-  align-self: center;
 }
 .card .lb_details label {
   padding-left: 7px;
@@ -112,49 +104,52 @@
 .card .g_details {
   grid-area: g_details;
 }
-.card .g_details #nTbcBfQZW9X-w7mtkLzijNL-val {
+.card .optionSetSelectFieldForCustomForm_defaultCustomContainer__3VCN0, .card .textFieldCustomForm_defaultCustomContainer__1R60w, .card .userNameFieldCustomForm_defaultCustomContainer__3UUau {
   width: 100%;
+}
+
+.title_uploads {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 8px 8px;
+  grid-auto-flow: row;
+  margin-bottom: 8px;
+  grid-template-areas: "uft uit";
+}
+.title_uploads .uft {
+  grid-area: uft;
+}
+.title_uploads .uft label {
+  font-size: 16px;
+  font-weight: 500;
+}
+.title_uploads .uft label Span {
+  color: red;
+}
+.title_uploads .uit {
+  grid-area: uit;
+}
+.title_uploads .uit label {
+  font-size: 16px;
+  font-weight: 500;
+}
+.title_uploads .uit label Span {
+  color: red;
 }
 
 .uploads {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto auto auto;
+  grid-template-rows: 1fr auto auto auto;
   grid-auto-columns: 1fr;
   gap: 8px 8px;
   grid-auto-flow: row;
   padding: 10px;
   border: 1px solid #7d7d7d;
-  grid-template-areas: "uft uit" "uf1 ui1" "uf2 ui2" "uf3 ui3";
-}
-.uploads .uft {
-  grid-area: uft;
-  align-self: center;
-  padding: 8px;
-  border-bottom: 1px solid #7d7d7d;
-}
-.uploads .uft label {
-  font-size: 16px;
-  font-weight: 500;
-  padding-left: 7px;
-}
-.uploads .uft label Span {
-  color: red;
-}
-.uploads .uit {
-  grid-area: uit;
-  align-self: center;
-  padding: 8px;
-  border-bottom: 1px solid #7d7d7d;
-}
-.uploads .uit label {
-  font-size: 16px;
-  font-weight: 500;
-  padding-left: 7px;
-}
-.uploads .uit label Span {
-  color: red;
+  grid-template-areas: "uf1 ui1" "uf2 ui2" "uf3 ui3";
 }
 .uploads .uf1 {
   grid-area: uf1;

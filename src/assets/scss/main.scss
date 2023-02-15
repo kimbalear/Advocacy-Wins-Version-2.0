@@ -2,10 +2,16 @@
 
 $clr1: #FDF4E7;
 
+#advWinsForm {
+    width: 100%;
+    height: auto;
+}
+
 .jss215 {
     background-color: #FDF4E7;
 }
-.jss424{
+
+.jss424 {
     border: 1px solid #7d7d7d;
 }
 
@@ -68,23 +74,23 @@ $clr1: #FDF4E7;
 
 .card {
     display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto auto;
-    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
     gap: 8px 8px;
     grid-auto-flow: row;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #7d7d7d;
     grid-template-areas:
-        "lb_need g_need"
-        "lb_brief g_brief"
-        "lb_details g_details";
+        "lb_need"
+        "g_need"
+        "lb_brief"
+        "g_brief"
+        "lb_details"
+        "g_details";
 
     .lb_need {
         grid-area: lb_need;
-        justify-self: stretch;
-        align-self: center;
 
         label {
             padding-left: 7px;
@@ -97,16 +103,10 @@ $clr1: #FDF4E7;
 
     .g_need {
         grid-area: g_need;
-
-        #nTbcBfQZW9X-sA82BaO7QQa-val {
-            width: 100%;
-        }
     }
 
     .lb_brief {
         grid-area: lb_brief;
-        justify-self: stretch;
-        align-self: center;
 
         label {
             padding-left: 7px;
@@ -119,16 +119,10 @@ $clr1: #FDF4E7;
 
     .g_brief {
         grid-area: g_brief;
-
-        #nTbcBfQZW9X-rHGuINTVs2L-val {
-            width: 100%;
-        }
     }
 
     .lb_details {
         grid-area: lb_details;
-        justify-self: stretch;
-        align-self: center;
 
         label {
             padding-left: 7px;
@@ -142,38 +136,30 @@ $clr1: #FDF4E7;
     .g_details {
         grid-area: g_details;
 
-        #nTbcBfQZW9X-w7mtkLzijNL-val {
-            width: 100%;
-        }
+    }
+
+    .optionSetSelectFieldForCustomForm_defaultCustomContainer__3VCN0, .textFieldCustomForm_defaultCustomContainer__1R60w, .userNameFieldCustomForm_defaultCustomContainer__3UUau {
+        width: 100%;
     }
 }
 
-.uploads {
+.title_uploads {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto auto;
-    grid-auto-columns: 1fr;
+    grid-template-rows: auto;
     gap: 8px 8px;
     grid-auto-flow: row;
-    padding: 10px;
-    border: 1px solid #7d7d7d;
+    margin-bottom: 8px;
     grid-template-areas:
-        "uft uit"
-        "uf1 ui1"
-        "uf2 ui2"
-        "uf3 ui3";
+        "uft uit";
 
     .uft {
         grid-area: uft;
-        align-self: center;
-        padding: 8px;
-        border-bottom: 1px solid #7d7d7d;
 
         label {
             font-size: 16px;
             font-weight: 500;
-            padding-left: 7px;
 
             Span {
                 color: red;
@@ -183,20 +169,32 @@ $clr1: #FDF4E7;
 
     .uit {
         grid-area: uit;
-        align-self: center;
-        padding: 8px;
-        border-bottom: 1px solid #7d7d7d;
 
         label {
             font-size: 16px;
             font-weight: 500;
-            padding-left: 7px;
 
             Span {
                 color: red;
             }
         }
     }
+}
+
+.uploads {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto auto auto;
+    grid-auto-columns: 1fr;
+    gap: 8px 8px;
+    grid-auto-flow: row;
+    padding: 10px;
+    border: 1px solid #7d7d7d;
+    grid-template-areas:
+        "uf1 ui1"
+        "uf2 ui2"
+        "uf3 ui3";
 
     .uf1 {
         grid-area: uf1;
