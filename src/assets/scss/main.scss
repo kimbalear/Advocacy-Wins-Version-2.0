@@ -72,7 +72,8 @@ $clr1: #FDF4E7;
     }
 }
 
-.card {
+
+.card1 {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto auto auto;
@@ -81,16 +82,33 @@ $clr1: #FDF4E7;
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #7d7d7d;
+    background-color: red;
     grid-template-areas:
-        "lb_need"
-        "g_need"
+        "lb_cfrm"
+        "g_inputf"
         "lb_brief"
         "g_brief"
         "lb_details"
         "g_details";
 
-    .lb_need {
-        grid-area: lb_need;
+    .lb_cfrm {
+        grid-area: lb_cfrm;
+
+        label {
+            padding-left: 7px;
+
+            Span {
+                color: rgb(4, 0, 255);
+            }
+        }
+    }
+
+    .g_inputf {
+        grid-area: g_inputf;
+    }
+
+    .lb_brief {
+        grid-area: lb_brief;
 
         label {
             padding-left: 7px;
@@ -101,8 +119,64 @@ $clr1: #FDF4E7;
         }
     }
 
-    .g_need {
-        grid-area: g_need;
+    .g_brief {
+        grid-area: g_brief;
+    }
+
+    .lb_details {
+        grid-area: lb_details;
+
+        label {
+            padding-left: 7px;
+
+            Span {
+                color: red;
+            }
+        }
+    }
+
+    .g_details {
+        grid-area: g_details;
+
+    }
+
+    .optionSetSelectFieldForCustomForm_defaultCustomContainer__3VCN0, .textFieldCustomForm_defaultCustomContainer__1R60w, .userNameFieldCustomForm_defaultCustomContainer__3UUau {
+        width: 100%;
+    }
+}
+
+.card2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+    gap: 8px 8px;
+    grid-auto-flow: row;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #7d7d7d;
+    background-color: red;
+    grid-template-areas:
+        "lb_cfrm"
+        "g_inputf"
+        "lb_brief"
+        "g_brief"
+        "lb_details"
+        "g_details";
+
+    .lb_cfrm {
+        grid-area: lb_cfrm;
+
+        label {
+            padding-left: 7px;
+
+            Span {
+                color: red;
+            }
+        }
+    }
+
+    .g_inputf {
+        grid-area: g_inputf;
     }
 
     .lb_brief {

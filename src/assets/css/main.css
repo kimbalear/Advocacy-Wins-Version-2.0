@@ -57,7 +57,7 @@
   width: 100%;
 }
 
-.card {
+.card1 {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto auto auto auto;
@@ -66,45 +66,98 @@
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #7d7d7d;
-  grid-template-areas: "lb_need" "g_need" "lb_brief" "g_brief" "lb_details" "g_details";
+  background-color: red;
+  grid-template-areas: "lb_cfrm" "g_inputf" "lb_brief" "g_brief" "lb_details" "g_details";
 }
-.card .lb_need {
-  grid-area: lb_need;
+.card1 .lb_cfrm {
+  grid-area: lb_cfrm;
 }
-.card .lb_need label {
+.card1 .lb_cfrm label {
   padding-left: 7px;
 }
-.card .lb_need label Span {
-  color: red;
+.card1 .lb_cfrm label Span {
+  color: rgb(4, 0, 255);
 }
-.card .g_need {
-  grid-area: g_need;
+.card1 .g_inputf {
+  grid-area: g_inputf;
 }
-.card .lb_brief {
+.card1 .lb_brief {
   grid-area: lb_brief;
 }
-.card .lb_brief label {
+.card1 .lb_brief label {
   padding-left: 7px;
 }
-.card .lb_brief label Span {
+.card1 .lb_brief label Span {
   color: red;
 }
-.card .g_brief {
+.card1 .g_brief {
   grid-area: g_brief;
 }
-.card .lb_details {
+.card1 .lb_details {
   grid-area: lb_details;
 }
-.card .lb_details label {
+.card1 .lb_details label {
   padding-left: 7px;
 }
-.card .lb_details label Span {
+.card1 .lb_details label Span {
   color: red;
 }
-.card .g_details {
+.card1 .g_details {
   grid-area: g_details;
 }
-.card .optionSetSelectFieldForCustomForm_defaultCustomContainer__3VCN0, .card .textFieldCustomForm_defaultCustomContainer__1R60w, .card .userNameFieldCustomForm_defaultCustomContainer__3UUau {
+.card1 .optionSetSelectFieldForCustomForm_defaultCustomContainer__3VCN0, .card1 .textFieldCustomForm_defaultCustomContainer__1R60w, .card1 .userNameFieldCustomForm_defaultCustomContainer__3UUau {
+  width: 100%;
+}
+
+.card2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto auto auto auto;
+  gap: 8px 8px;
+  grid-auto-flow: row;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #7d7d7d;
+  background-color: red;
+  grid-template-areas: "lb_cfrm" "g_inputf" "lb_brief" "g_brief" "lb_details" "g_details";
+}
+.card2 .lb_cfrm {
+  grid-area: lb_cfrm;
+}
+.card2 .lb_cfrm label {
+  padding-left: 7px;
+}
+.card2 .lb_cfrm label Span {
+  color: red;
+}
+.card2 .g_inputf {
+  grid-area: g_inputf;
+}
+.card2 .lb_brief {
+  grid-area: lb_brief;
+}
+.card2 .lb_brief label {
+  padding-left: 7px;
+}
+.card2 .lb_brief label Span {
+  color: red;
+}
+.card2 .g_brief {
+  grid-area: g_brief;
+}
+.card2 .lb_details {
+  grid-area: lb_details;
+}
+.card2 .lb_details label {
+  padding-left: 7px;
+}
+.card2 .lb_details label Span {
+  color: red;
+}
+.card2 .g_details {
+  grid-area: g_details;
+}
+.card2 .optionSetSelectFieldForCustomForm_defaultCustomContainer__3VCN0, .card2 .textFieldCustomForm_defaultCustomContainer__1R60w, .card2 .userNameFieldCustomForm_defaultCustomContainer__3UUau {
   width: 100%;
 }
 
