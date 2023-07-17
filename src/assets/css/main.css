@@ -60,14 +60,13 @@
 .card1 {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-rows: auto auto;
   gap: 8px 8px;
   grid-auto-flow: row;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #7d7d7d;
-  background-color: red;
-  grid-template-areas: "lb_cfrm" "g_inputf" "lb_brief" "g_brief" "lb_details" "g_details";
+  grid-template-areas: "lb_cfrm" "g_inputf";
 }
 .card1 .lb_cfrm {
   grid-area: lb_cfrm;
@@ -80,33 +79,27 @@
 }
 .card1 .g_inputf {
   grid-area: g_inputf;
-}
-.card1 .lb_brief {
-  grid-area: lb_brief;
-}
-.card1 .lb_brief label {
-  padding-left: 7px;
-}
-.card1 .lb_brief label Span {
-  color: red;
-}
-.card1 .g_brief {
-  grid-area: g_brief;
-}
-.card1 .lb_details {
-  grid-area: lb_details;
-}
-.card1 .lb_details label {
-  padding-left: 7px;
-}
-.card1 .lb_details label Span {
-  color: red;
-}
-.card1 .g_details {
-  grid-area: g_details;
-}
-.card1 .optionSetSelectFieldForCustomForm_defaultCustomContainer__3VCN0, .card1 .textFieldCustomForm_defaultCustomContainer__1R60w, .card1 .userNameFieldCustomForm_defaultCustomContainer__3UUau {
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-columns: 1fr;
+  gap: 8px 8px;
+  grid-auto-flow: row;
+  padding: 10px;
+  grid-template-areas: "lft rgth";
+}
+.card1 .g_inputf .lft {
+  grid-area: lft;
+  justify-self: start;
+  align-self: center;
+  padding: 8px;
+}
+.card1 .g_inputf .rgth {
+  grid-area: rgth;
+  justify-self: start;
+  align-self: center;
+  padding: 8px;
 }
 
 .card2 {
@@ -118,7 +111,6 @@
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #7d7d7d;
-  background-color: red;
   grid-template-areas: "lb_cfrm" "g_inputf" "lb_brief" "g_brief" "lb_details" "g_details";
 }
 .card2 .lb_cfrm {
@@ -157,7 +149,9 @@
 .card2 .g_details {
   grid-area: g_details;
 }
-.card2 .optionSetSelectFieldForCustomForm_defaultCustomContainer__3VCN0, .card2 .textFieldCustomForm_defaultCustomContainer__1R60w, .card2 .userNameFieldCustomForm_defaultCustomContainer__3UUau {
+.card2 .optionSetSelectFieldForCustomForm_defaultCustomContainer__3VCN0,
+.card2 .textFieldCustomForm_defaultCustomContainer__1R60w,
+.card2 .userNameFieldCustomForm_defaultCustomContainer__3UUau {
   width: 100%;
 }
 
