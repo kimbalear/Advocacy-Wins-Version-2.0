@@ -1,321 +1,262 @@
 <script src="../../dhis-web-commons/javascripts/jquery.min.js"></script>
 <style type="text/css">
-    
-    #advWinsForm {
-  width: 100%;
-  height: auto;
-}
+  #advWinsForm {
+    width: 100%;
+    height: auto;
+  }
 
-.jss215 {
-  background-color: #fdf4e7;
-}
+  .jss215 {
+    background-color: #fdf4e7;
+  }
 
-.jss424 {
-  border: 1px solid #7d7d7d;
-}
+  .jss424 {
+    border: 1px solid #7d7d7d;
+  }
 
-.advc {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-  grid-auto-columns: 1fr;
-  gap: 8px 8px;
-  grid-auto-flow: row;
-  padding: 10px;
-  border: 1px solid #7d7d7d;
-  margin-bottom: 20px;
-  grid-template-areas: "advc_title" "advc_stage";
-}
-.advc .advc_title {
-  grid-area: advc_title;
-}
-.advc .advc_title label {
-  font-size: 16px;
-  font-weight: 500;
-}
-.advc .advc_stage {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 8px;
-  grid-auto-flow: row;
-  grid-template-areas: "lb slctbox";
-  grid-area: advc_stage;
-}
-.advc .advc_stage .lb {
-  grid-area: lb;
-  justify-self: stretch;
-  align-self: center;
-}
-.advc .advc_stage .lb label {
-  padding-left: 7px;
-}
-.advc .advc_stage .lb label Span {
-  color: red;
-}
-.advc .advc_stage .slctbox {
-  grid-area: slctbox;
-}
-.advc .advc_stage .slctbox #nTbcBfQZW9X-DTIsk9cDl8u-val {
-  width: 100%;
-}
+  .advc {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    grid-auto-columns: 1fr;
+    gap: 8px 8px;
+    grid-auto-flow: row;
+    padding: 10px;
+    border: 1px solid #7d7d7d;
+    margin-bottom: 20px;
+    grid-template-areas: "advc_title" "advc_stage";
+  }
+  .advc .advc_title {
+    grid-area: advc_title;
+  }
+  .advc .advc_title label {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .advc .advc_stage {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 8px;
+    grid-auto-flow: row;
+    grid-template-areas: "lb slctbox";
+    grid-area: advc_stage;
+  }
+  .advc .advc_stage .lb {
+    grid-area: lb;
+    justify-self: stretch;
+    align-self: center;
+  }
+  .advc .advc_stage .lb label {
+    padding-left: 7px;
+  }
+  .advc .advc_stage .lb label Span {
+    color: red;
+  }
+  .advc .advc_stage .slctbox {
+    grid-area: slctbox;
+  }
+  .advc .advc_stage .slctbox #nTbcBfQZW9X-DTIsk9cDl8u-val {
+    width: 100%;
+  }
 
-.card1 {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-  gap: 8px 8px;
-  grid-auto-flow: row;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #7d7d7d;
-  grid-template-areas: "lb_cfrm" "g_inputf";
-}
-.card1 .lb_cfrm {
-  grid-area: lb_cfrm;
-}
-.card1 .lb_cfrm label {
-  padding-left: 7px;
-}
-.card1 .lb_cfrm label Span {
-  color: rgb(4, 0, 255);
-}
-.card1 .g_inputf {
-  grid-area: g_inputf;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-auto-columns: 1fr;
-  gap: 8px 8px;
-  grid-auto-flow: row;
-  padding: 10px;
-  grid-template-areas: "lft rgth";
-}
-.card1 .g_inputf .lft {
-  grid-area: lft;
-  justify-self: start;
-  align-self: center;
-  padding: 8px;
-}
-.card1 .g_inputf .rgth {
-  grid-area: rgth;
-  justify-self: start;
-  align-self: center;
-  padding: 8px;
-}
+  .card1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 8px 8px;
+    grid-auto-flow: row;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #7d7d7d;
+    grid-template-areas: "lb_cfrm" "g_inputf";
+  }
 
-.card2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
-  gap: 8px 8px;
-  grid-auto-flow: row;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #7d7d7d;
-  grid-template-areas: "lb_cfrm lb_cfrm" "g_inputf g_inputf" "lb_brief lb_brief_trns" "g_brief g_brief_trns" "lb_details lb_details_trns" "g_details g_details_trns" "lb_lessons_learned lb_lessons_learned_trns" "lessons_learned lessons_learned_trns" "lb_change_level lb_change_level" "change_level change_level" "lb_change_type lb_change_type" "change_type change_type";
-}
-.card2 .lb_cfrm {
-  grid-area: lb_cfrm;
-}
-.card2 .lb_cfrm label {
-  padding-left: 7px;
-}
-.card2 .lb_cfrm label Span {
-  color: red;
-}
-.card2 .g_inputf {
-  grid-area: g_inputf;
-}
-.card2 .g_inputf .lb_otherField {
-  padding: 8px 0;
-}
-.card2 .lb_brief {
-  grid-area: lb_brief;
-}
-.card2 .lb_brief label {
-  padding-left: 7px;
-}
-.card2 .lb_brief label Span {
-  color: red;
-}
-.card2 .lb_brief_trns {
-  grid-area: lb_brief_trns;
-}
-.card2 .lb_brief_trns label {
-  padding-left: 7px;
-}
-.card2 .lb_brief_trns label Span {
-  color: red;
-}
-.card2 .g_brief {
-  grid-area: g_brief;
-}
-.card2 .g_brief_trns {
-  grid-area: g_brief_trns;
-}
-.card2 .lb_details {
-  grid-area: lb_details;
-}
-.card2 .lb_details label {
-  padding-left: 7px;
-}
-.card2 .lb_details label Span {
-  color: red;
-}
-.card2 .lb_details_trns {
-  grid-area: lb_details_trns;
-}
-.card2 .lb_details_trns label {
-  padding-left: 7px;
-}
-.card2 .lb_details_trns label Span {
-  color: red;
-}
-.card2 .g_details {
-  grid-area: g_details;
-}
-.card2 .g_details_trns {
-  grid-area: g_details_trns;
-}
-.card2 .lb_lessons_learned {
-  grid-area: lb_lessons_learned;
-}
-.card2 .lb_lessons_learned label {
-  padding-left: 7px;
-}
-.card2 .lb_lessons_learned label Span {
-  color: red;
-}
-.card2 .lb_lessons_learned_trns {
-  grid-area: lb_lessons_learned_trns;
-}
-.card2 .lb_lessons_learned_trns label {
-  padding-left: 7px;
-}
-.card2 .lb_lessons_learned_trns label Span {
-  color: red;
-}
-.card2 .lessons_learned {
-  grid-area: lessons_learned;
-}
-.card2 .lessons_learned_trns {
-  grid-area: lessons_learned_trns;
-}
-.card2 .lb_change_level {
-  grid-area: lb_change_level;
-}
-.card2 .lb_change_level label {
-  padding-left: 7px;
-}
-.card2 .lb_change_level label Span {
-  color: red;
-}
-.card2 .change_level {
-  grid-area: change_level;
-}
-.card2 .lb_change_type {
-  grid-area: lb_change_type;
-}
-.card2 .lb_change_type label {
-  padding-left: 7px;
-}
-.card2 .lb_change_type label Span {
-  color: red;
-}
-.card2 .change_type {
-  grid-area: change_type;
-}
+  .card1 .lb_cfrm {
+    grid-area: lb_cfrm;
+  }
 
-.title_uploads {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  gap: 8px 8px;
-  grid-auto-flow: row;
-  margin-bottom: 8px;
-  grid-template-areas: "uft uit";
-}
-.title_uploads .uft {
-  grid-area: uft;
-}
-.title_uploads .uft label {
-  font-size: 16px;
-  font-weight: 500;
-}
-.title_uploads .uft label Span {
-  color: red;
-}
-.title_uploads .uit {
-  grid-area: uit;
-}
-.title_uploads .uit label {
-  font-size: 16px;
-  font-weight: 500;
-}
-.title_uploads .uit label Span {
-  color: red;
-}
+  .card1 .lb_cfrm label {
+    padding-left: 7px;
+  }
 
-.uploads {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr auto auto auto;
-  grid-auto-columns: 1fr;
-  gap: 8px 8px;
-  grid-auto-flow: row;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #7d7d7d;
-  grid-template-areas: "uf1 ui1" "uf2 ui2" "uf3 ui3";
-}
-.uploads .uf1 {
-  grid-area: uf1;
-  justify-self: start;
-  align-self: center;
-  padding: 8px;
-}
-.uploads .ui1 {
-  grid-area: ui1;
-  justify-self: start;
-  align-self: center;
-  padding: 8px;
-}
-.uploads .uf2 {
-  grid-area: uf2;
-  justify-self: start;
-  align-self: center;
-  padding: 8px;
-}
-.uploads .ui2 {
-  grid-area: ui2;
-  justify-self: start;
-  align-self: center;
-  padding: 8px;
-}
-.uploads .uf3 {
-  grid-area: uf3;
-  justify-self: start;
-  align-self: center;
-  padding: 8px;
-}
-.uploads .ui3 {
-  grid-area: ui3;
-  justify-self: start;
-  align-self: center;
-  padding: 8px;
-}
+  .card1 .lb_cfrm label Span {
+    color: rgb(4, 0, 255);
+  }
 
-.fos_scoring label {
-  padding-left: 7px;
-}
+  .card1 .g_inputf {
+    grid-area: g_inputf;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-auto-columns: 1fr;
+    gap: 8px 8px;
+    grid-auto-flow: row;
+    padding: 10px;
+    grid-template-areas: "lft rgth";
+  }
 
-/*# sourceMappingURL=main.css.map */
+  .card1 .g_inputf .lft {
+    grid-area: lft;
+    justify-self: start;
+    align-self: center;
+    padding: 8px;
+  }
 
+  .card1 .g_inputf .rgth {
+    grid-area: rgth;
+    justify-self: start;
+    align-self: center;
+    padding: 8px;
+  }
 
+  .card2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+    gap: 8px 8px;
+    grid-auto-flow: row;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #7d7d7d;
+    grid-template-areas: "lb_cfrm" "g_inputf" "lb_brief" "g_brief" "lb_details" "g_details";
+  }
+
+  .card2 .lb_cfrm {
+    grid-area: lb_cfrm;
+  }
+
+  .card2 .lb_cfrm label {
+    padding-left: 7px;
+  }
+
+  .card2 .lb_cfrm label Span {
+    color: red;
+  }
+
+  .card2 .g_inputf {
+    grid-area: g_inputf;
+  }
+
+  .card2 .lb_brief {
+    grid-area: lb_brief;
+  }
+
+  .card2 .lb_brief label {
+    padding-left: 7px;
+  }
+
+  .card2 .lb_brief label Span {
+    color: red;
+  }
+
+  .card2 .g_brief {
+    grid-area: g_brief;
+  }
+
+  .card2 .lb_details {
+    grid-area: lb_details;
+  }
+
+  .card2 .lb_details label {
+    padding-left: 7px;
+  }
+
+  .card2 .lb_details label Span {
+    color: red;
+  }
+
+  .card2 .g_details {
+    grid-area: g_details;
+  }
+
+  .card2 .optionSetSelectFieldForCustomForm_defaultCustomContainer__3VCN0,
+  .card2 .textFieldCustomForm_defaultCustomContainer__1R60w,
+  .card2 .userNameFieldCustomForm_defaultCustomContainer__3UUau {
+    width: 100%;
+  }
+
+  .title_uploads {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 8px 8px;
+    grid-auto-flow: row;
+    margin-bottom: 8px;
+    grid-template-areas: "uft uit";
+  }
+  .title_uploads .uft {
+    grid-area: uft;
+  }
+  .title_uploads .uft label {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .title_uploads .uft label Span {
+    color: red;
+  }
+  .title_uploads .uit {
+    grid-area: uit;
+  }
+  .title_uploads .uit label {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .title_uploads .uit label Span {
+    color: red;
+  }
+
+  .uploads {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto auto auto;
+    grid-auto-columns: 1fr;
+    gap: 8px 8px;
+    grid-auto-flow: row;
+    padding: 10px;
+    border: 1px solid #7d7d7d;
+    grid-template-areas: "uf1 ui1" "uf2 ui2" "uf3 ui3";
+  }
+  .uploads .uf1 {
+    grid-area: uf1;
+    justify-self: start;
+    align-self: center;
+    padding: 8px;
+  }
+  .uploads .ui1 {
+    grid-area: ui1;
+    justify-self: start;
+    align-self: center;
+    padding: 8px;
+  }
+  .uploads .uf2 {
+    grid-area: uf2;
+    justify-self: start;
+    align-self: center;
+    padding: 8px;
+  }
+  .uploads .ui2 {
+    grid-area: ui2;
+    justify-self: start;
+    align-self: center;
+    padding: 8px;
+  }
+  .uploads .uf3 {
+    grid-area: uf3;
+    justify-self: start;
+    align-self: center;
+    padding: 8px;
+  }
+  .uploads .ui3 {
+    grid-area: ui3;
+    justify-self: start;
+    align-self: center;
+    padding: 8px;
+  }
+
+  /*# sourceMappingURL=main.css.map */
 </style>
 <div class="loaderDiv" id="formLoadingDiv" style="display: none">
   <br />
@@ -327,7 +268,7 @@
   <p><span>Loading data and setting up the form</span>...</p>
 </div>
 
-<div id="advWinsForm">
+<div id="advWinsForm" style="display: block">
   <div class="advc">
     <div class="advc_title">
       <label keyword="opt_c:form_label_advocacyTracker"
@@ -359,7 +300,7 @@
     </div>
   </div>
 
-  <div class="card1" name="periodOfTimeOrStatusField">
+  <div class="card1" name="periodOfTimeOrStatusField" style="display: none">
     <div class="lb_cfrm">
       <label keyword="opt_c:Contribution_ActivityDate"
         >Did this acdovcacy activity take place over an extended period of time?
@@ -369,7 +310,7 @@
     </div>
 
     <div class="g_inputf">
-      <div class="lft" name="periodOfTimeOrStatusField">
+      <div class="lft" name="periodOfTimeOrStatusField" style="display: none">
         <input
           id="nTbcBfQZW9X-Y1lOpbaKcys-val"
           name="entryfield"
@@ -378,7 +319,7 @@
         />
       </div>
 
-      <div class="rgth" name="dateOfCompletionField">
+      <div class="rgth" name="dateOfCompletionField" style="display: none">
         <input
           id="nTbcBfQZW9X-uUY1NpMy98K-val"
           name="entryfield"
@@ -403,25 +344,26 @@
         title="Adv Tracker 1 - Need"
         value="[ Adv Tracker 1 - Need ]"
       />
-      <div name="advTracker1NeedOtherField" class="lb_otherField">
-        <label keyword="opt_c:Default_Other_need"
-          >If &quot;other&quot;, please describe. (Max 50 characters)?</label
-        >
-      </div>
-
-      <div name="advTracker1NeedOtherField"  class="otherField">
-        <input
-          id="nTbcBfQZW9X-J7LzW2muqTp-val"
-          name="entryfield"
-          title="Adv Tracker 1 - Other need"
-          value="[ Adv Tracker 1 - Other need ]"
-        />
-      </div>
     </div>
 
-    <div class="lb_brief"><label keyword="brief">Brief (120 ch)</label></div>
+    <div name="advTracker1NeedOtherField" style="display: none">
+      <label keyword="opt_c:Default_Other_need"
+        >If &quot;other&quot;, please describe. (Max 50 characters)?</label
+      >
+    </div>
 
-    <div class="g_brief">
+    <div name="advTracker1NeedOtherField" style="display: none">
+      <input
+        id="nTbcBfQZW9X-J7LzW2muqTp-val"
+        name="entryfield"
+        title="Adv Tracker 1 - Other need"
+        value="[ Adv Tracker 1 - Other need ]"
+      />
+    </div>
+
+    <div><label keyword="brief">Brief (120 ch)</label></div>
+
+    <div>
       <input
         id="nTbcBfQZW9X-rHGuINTVs2L-val"
         name="entryfield"
@@ -430,20 +372,9 @@
       />
     </div>
 
-    <div class="lb_brief_trns">&nbsp;</div>
+    <div><label keyword="detail">Detail</label></div>
 
-    <div class="g_brief_trns">
-      <input
-        id="nTbcBfQZW9X-zNfzVJXiFkG-val"
-        name="entryfield"
-        title="Adv Tracker 1 - Brief Translations"
-        value="[ Adv Tracker 1 - Brief Translations ]"
-      />
-    </div>
-
-    <div class="lb_details"><label keyword="detail">Detail</label></div>
-
-    <div class="g_details">
+    <div>
       <input
         id="nTbcBfQZW9X-w7mtkLzijNL-val"
         name="entryfield"
@@ -452,22 +383,11 @@
       />
     </div>
 
-    <div class="lb_details_trns">&nbsp;</div>
-
-    <div class="g_details_trns">
-      <input
-        id="nTbcBfQZW9X-xxfUP3OlqUQ-val"
-        name="entryfield"
-        title="Adv Tracker 1 - Detail Translations"
-        value="[ Adv Tracker 1 - Detail Translations ]"
-      />
-    </div>
-
-    <div class="lb_lessons_learned" name="lessonsLearnedField">
+    <div name="lessonsLearnedField" style="display: none">
       <label keyword="lessonsLearned">Lessons Learned</label>
     </div>
 
-    <div class="lessons_learned" name="lessonsLearnedField">
+    <div name="lessonsLearnedField" style="display: none">
       <input
         id="nTbcBfQZW9X-CRxBaKd9gXn-val"
         name="entryfield"
@@ -476,24 +396,16 @@
       />
     </div>
 
-    <div class="lb_lessons_learned_trns">&nbsp;</div>
-
-    <div class="lessons_learned_trns">
-      <input
-        id="nTbcBfQZW9X-Ob8sJOK5ChR-val"
-        name="entryfield"
-        title="Adv Tracker 1 - Lessons Learned Translations"
-        value="[ Adv Tracker 1 - Lessons Learned Translations ]"
-      />
-    </div>
-
-    <div class="lb_change_level">
-      <label keyword="opt_c:Change_Level" name="changeLevelUidField"
+    <div>
+      <label
+        keyword="opt_c:Change_Level"
+        name="changeLevelUidField"
+        style="display: none"
         >Change_Level</label
       >
     </div>
 
-    <div class="change_level" name="changeLevelUidField">
+    <div name="changeLevelUidField" style="display: none">
       <input
         id="nTbcBfQZW9X-nvVyqoUNG7l-val"
         name="entryfield"
@@ -502,13 +414,16 @@
       />
     </div>
 
-    <div class="lb_change_type">
-      <label keyword="opt_c:Change_Type" name="changeTypeUidField"
+    <div>
+      <label
+        keyword="opt_c:Change_Type"
+        name="changeTypeUidField"
+        style="display: none"
         >Change_Type</label
       >
     </div>
 
-    <div class="change_type" name="changeTypeUidField">
+    <div name="changeTypeUidField" style="display: none">
       <input
         id="nTbcBfQZW9X-vILyZ9FVGLS-val"
         name="entryfield"
@@ -581,25 +496,8 @@
         value="[ Adv Tracker 1 - Image 3 ]"
       />
     </div>
-
-    <div class="ui3">&nbsp;</div>
-
-    <div class="ui3">&nbsp;</div>
-
-    <div class="ui3">&nbsp;</div>
-  </div>
-
-  <div class="fos_scoring">
-    <label>Advocacy FOS Scoring</label>
-    <input
-      id="nTbcBfQZW9X-dHptKL9P6U3-val"
-      name="entryfield"
-      title="Advocacy - FOS Scoring"
-      value="[ Advocacy - FOS Scoring ]"
-    />
   </div>
 </div>
-
 <script>
   console.log("============= START FORM ");
   new AdvocacyWinsForm();

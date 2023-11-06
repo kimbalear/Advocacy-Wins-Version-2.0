@@ -1,297 +1,393 @@
 @import "abstract/settings";
 
-$clr1: #FDF4E7;
+$clr1: #fdf4e7;
 
 #advWinsForm {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .jss215 {
-    background-color: #FDF4E7;
+  background-color: #fdf4e7;
 }
 
 .jss424 {
-    border: 1px solid #7d7d7d;
+  border: 1px solid #7d7d7d;
 }
 
 .advc {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  grid-auto-columns: 1fr;
+  gap: 8px 8px;
+  grid-auto-flow: row;
+  padding: 10px;
+  border: 1px solid #7d7d7d;
+  margin-bottom: 20px;
+  grid-template-areas:
+    "advc_title"
+    "advc_stage";
+
+  .advc_title {
+    grid-area: advc_title;
+
+    label {
+      font-size: 16px;
+      font-weight: 500;
+    }
+  }
+
+  .advc_stage {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 8px;
+    grid-auto-flow: row;
+    grid-template-areas: "lb slctbox";
+    grid-area: advc_stage;
+
+    .lb {
+      grid-area: lb;
+      justify-self: stretch;
+      align-self: center;
+
+      label {
+        padding-left: 7px;
+
+        Span {
+          color: red;
+        }
+      }
+    }
+
+    .slctbox {
+      grid-area: slctbox;
+
+      #nTbcBfQZW9X-DTIsk9cDl8u-val {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.card1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 8px 8px;
+  grid-auto-flow: row;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #7d7d7d;
+  grid-template-areas:
+    "lb_cfrm"
+    "g_inputf";
+
+  .lb_cfrm {
+    grid-area: lb_cfrm;
+
+    label {
+      padding-left: 7px;
+
+      Span {
+        color: rgb(4, 0, 255);
+      }
+    }
+  }
+
+  .g_inputf {
+    grid-area: g_inputf;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
     grid-auto-columns: 1fr;
     gap: 8px 8px;
     grid-auto-flow: row;
     padding: 10px;
-    border: 1px solid #7d7d7d;
-    margin-bottom: 20px;
-    grid-template-areas:
-        "advc_title"
-        "advc_stage";
+    grid-template-areas: "lft rgth";
 
-    .advc_title {
-        grid-area: advc_title;
-
-        label {
-            font-size: 16px;
-            font-weight: 500;
-        }
+    .lft {
+      grid-area: lft;
+      justify-self: start;
+      align-self: center;
+      padding: 8px;
     }
 
-    .advc_stage {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        grid-template-rows: 1fr;
-        gap: 0px 8px;
-        grid-auto-flow: row;
-        grid-template-areas:
-            "lb slctbox";
-        grid-area: advc_stage;
-
-        .lb {
-            grid-area: lb;
-            justify-self: stretch;
-            align-self: center;
-
-            label {
-                padding-left: 7px;
-
-                Span {
-                    color: red;
-                }
-            }
-        }
-
-        .slctbox {
-            grid-area: slctbox;
-
-            #nTbcBfQZW9X-DTIsk9cDl8u-val {
-                width: 100%;
-            }
-        }
+    .rgth {
+      grid-area: rgth;
+      justify-self: start;
+      align-self: center;
+      padding: 8px;
     }
-}
-
-
-.card1 {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    gap: 8px 8px;
-    grid-auto-flow: row;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #7d7d7d;
-    grid-template-areas:
-        "lb_cfrm"
-        "g_inputf";
-
-    .lb_cfrm {
-        grid-area: lb_cfrm;
-
-        label {
-            padding-left: 7px;
-
-            Span {
-                color: rgb(4, 0, 255);
-            }
-        }
-    }
-
-    .g_inputf {
-        grid-area: g_inputf;
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        grid-auto-columns: 1fr;
-        gap: 8px 8px;
-        grid-auto-flow: row;
-        padding: 10px;
-        grid-template-areas:
-            "lft rgth";
-
-        .lft {
-            grid-area: lft;
-            justify-self: start;
-            align-self: center;
-            padding: 8px;
-        }
-
-        .rgth {
-            grid-area: rgth;
-            justify-self: start;
-            align-self: center;
-            padding: 8px;
-        }
-    }
+  }
 }
 
 .card2 {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto auto;
-    gap: 8px 8px;
-    grid-auto-flow: row;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #7d7d7d;
-    grid-template-areas:
-        "lb_cfrm"
-        "g_inputf"
-        "lb_brief"
-        "g_brief"
-        "lb_details"
-        "g_details";
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
+  gap: 8px 8px;
+  grid-auto-flow: row;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #7d7d7d;
+  grid-template-areas:
+    "lb_cfrm lb_cfrm"
+    "g_inputf g_inputf"
+    "lb_brief lb_brief_trns"
+    "g_brief g_brief_trns"
+    "lb_details lb_details_trns"
+    "g_details g_details_trns"
+    "lb_lessons_learned lb_lessons_learned_trns"
+    "lessons_learned lessons_learned_trns"
+    "lb_change_level lb_change_level"
+    "change_level change_level"
+    "lb_change_type lb_change_type"
+    "change_type change_type";
 
-    .lb_cfrm {
-        grid-area: lb_cfrm;
-
-        label {
-            padding-left: 7px;
-
-            Span {
-                color: red;
-            }
+  .lb_cfrm {
+    grid-area: lb_cfrm;
+    label {
+        padding-left: 7px;
+  
+        Span {
+          color: red;
         }
+      }
+  }
+
+  .g_inputf {
+    grid-area: g_inputf;
+
+    .lb_otherField{
+        padding: 8px 0;
     }
+    
+    .otherField{}
+  }
 
-    .g_inputf {
-        grid-area: g_inputf;
-    }
-
-    .lb_brief {
-        grid-area: lb_brief;
-
-        label {
-            padding-left: 7px;
-
-            Span {
-                color: red;
-            }
+  .lb_brief {
+    grid-area: lb_brief;
+    label {
+        padding-left: 7px;
+  
+        Span {
+          color: red;
         }
-    }
+      }
+  }
 
-    .g_brief {
-        grid-area: g_brief;
-    }
-
-    .lb_details {
-        grid-area: lb_details;
-
-        label {
-            padding-left: 7px;
-
-            Span {
-                color: red;
-            }
+  .lb_brief_trns {
+    grid-area: lb_brief_trns;
+    label {
+        padding-left: 7px;
+  
+        Span {
+          color: red;
         }
-    }
+      }
+  }
 
-    .g_details {
-        grid-area: g_details;
+  .g_brief {
+    grid-area: g_brief;
+  }
 
-    }
+  .g_brief_trns {
+    grid-area: g_brief_trns;
+  }
 
-    .optionSetSelectFieldForCustomForm_defaultCustomContainer__3VCN0,
-    .textFieldCustomForm_defaultCustomContainer__1R60w,
-    .userNameFieldCustomForm_defaultCustomContainer__3UUau {
-        width: 100%;
-    }
+  .lb_details {
+    grid-area: lb_details;
+    label {
+        padding-left: 7px;
+  
+        Span {
+          color: red;
+        }
+      }
+  }
+
+  .lb_details_trns {
+    grid-area: lb_details_trns;
+    label {
+        padding-left: 7px;
+  
+        Span {
+          color: red;
+        }
+      }
+  }
+
+  .g_details {
+    grid-area: g_details;
+  }
+
+  .g_details_trns {
+    grid-area: g_details_trns;
+  }
+
+  .lb_lessons_learned {
+    grid-area: lb_lessons_learned;
+    label {
+        padding-left: 7px;
+  
+        Span {
+          color: red;
+        }
+      }
+  }
+
+  .lb_lessons_learned_trns {
+    grid-area: lb_lessons_learned_trns;
+    label {
+        padding-left: 7px;
+  
+        Span {
+          color: red;
+        }
+      }
+  }
+
+  .lessons_learned {
+    grid-area: lessons_learned;
+  }
+
+  .lessons_learned_trns {
+    grid-area: lessons_learned_trns;
+  }
+
+  .lb_change_level {
+    grid-area: lb_change_level;
+    label {
+        padding-left: 7px;
+  
+        Span {
+          color: red;
+        }
+      }
+  }
+
+  .change_level {
+    grid-area: change_level;
+  }
+
+  .lb_change_type {
+    grid-area: lb_change_type;
+    label {
+        padding-left: 7px;
+  
+        Span {
+          color: red;
+        }
+      }
+  }
+
+  .change_type {
+    grid-area: change_type;
+  }
 }
 
 .title_uploads {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    gap: 8px 8px;
-    grid-auto-flow: row;
-    margin-bottom: 8px;
-    grid-template-areas:
-        "uft uit";
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 8px 8px;
+  grid-auto-flow: row;
+  margin-bottom: 8px;
+  grid-template-areas: "uft uit";
 
-    .uft {
-        grid-area: uft;
+  .uft {
+    grid-area: uft;
 
-        label {
-            font-size: 16px;
-            font-weight: 500;
+    label {
+      font-size: 16px;
+      font-weight: 500;
 
-            Span {
-                color: red;
-            }
-        }
+      Span {
+        color: red;
+      }
     }
+  }
 
-    .uit {
-        grid-area: uit;
+  .uit {
+    grid-area: uit;
 
-        label {
-            font-size: 16px;
-            font-weight: 500;
+    label {
+      font-size: 16px;
+      font-weight: 500;
 
-            Span {
-                color: red;
-            }
-        }
+      Span {
+        color: red;
+      }
     }
+  }
 }
 
 .uploads {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr auto auto auto;
-    grid-auto-columns: 1fr;
-    gap: 8px 8px;
-    grid-auto-flow: row;
-    padding: 10px;
-    border: 1px solid #7d7d7d;
-    grid-template-areas:
-        "uf1 ui1"
-        "uf2 ui2"
-        "uf3 ui3";
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto auto auto;
+  grid-auto-columns: 1fr;
+  gap: 8px 8px;
+  grid-auto-flow: row;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #7d7d7d;
+  grid-template-areas:
+    "uf1 ui1"
+    "uf2 ui2"
+    "uf3 ui3";
 
-    .uf1 {
-        grid-area: uf1;
-        justify-self: start;
-        align-self: center;
-        padding: 8px;
-    }
+  .uf1 {
+    grid-area: uf1;
+    justify-self: start;
+    align-self: center;
+    padding: 8px;
+  }
 
-    .ui1 {
-        grid-area: ui1;
-        justify-self: start;
-        align-self: center;
-        padding: 8px;
-    }
+  .ui1 {
+    grid-area: ui1;
+    justify-self: start;
+    align-self: center;
+    padding: 8px;
+  }
 
-    .uf2 {
-        grid-area: uf2;
-        justify-self: start;
-        align-self: center;
-        padding: 8px;
-    }
+  .uf2 {
+    grid-area: uf2;
+    justify-self: start;
+    align-self: center;
+    padding: 8px;
+  }
 
-    .ui2 {
-        grid-area: ui2;
-        justify-self: start;
-        align-self: center;
-        padding: 8px;
-    }
+  .ui2 {
+    grid-area: ui2;
+    justify-self: start;
+    align-self: center;
+    padding: 8px;
+  }
 
-    .uf3 {
-        grid-area: uf3;
-        justify-self: start;
-        align-self: center;
-        padding: 8px;
-    }
+  .uf3 {
+    grid-area: uf3;
+    justify-self: start;
+    align-self: center;
+    padding: 8px;
+  }
 
-    .ui3 {
-        grid-area: ui3;
-        justify-self: start;
-        align-self: center;
-        padding: 8px;
-    }
+  .ui3 {
+    grid-area: ui3;
+    justify-self: start;
+    align-self: center;
+    padding: 8px;
+  }
+}
+
+.fos_scoring{
+
+    label {
+        padding-left: 7px;
+      }
 }

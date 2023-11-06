@@ -4,7 +4,7 @@
 }
 
 .jss215 {
-  background-color: #FDF4E7;
+  background-color: #fdf4e7;
 }
 
 .jss424 {
@@ -104,14 +104,14 @@
 
 .card2 {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
   gap: 8px 8px;
   grid-auto-flow: row;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #7d7d7d;
-  grid-template-areas: "lb_cfrm" "g_inputf" "lb_brief" "g_brief" "lb_details" "g_details";
+  grid-template-areas: "lb_cfrm lb_cfrm" "g_inputf g_inputf" "lb_brief lb_brief_trns" "g_brief g_brief_trns" "lb_details lb_details_trns" "g_details g_details_trns" "lb_lessons_learned lb_lessons_learned_trns" "lessons_learned lessons_learned_trns" "lb_change_level lb_change_level" "change_level change_level" "lb_change_type lb_change_type" "change_type change_type";
 }
 .card2 .lb_cfrm {
   grid-area: lb_cfrm;
@@ -125,6 +125,9 @@
 .card2 .g_inputf {
   grid-area: g_inputf;
 }
+.card2 .g_inputf .lb_otherField {
+  padding: 8px 0;
+}
 .card2 .lb_brief {
   grid-area: lb_brief;
 }
@@ -134,8 +137,20 @@
 .card2 .lb_brief label Span {
   color: red;
 }
+.card2 .lb_brief_trns {
+  grid-area: lb_brief_trns;
+}
+.card2 .lb_brief_trns label {
+  padding-left: 7px;
+}
+.card2 .lb_brief_trns label Span {
+  color: red;
+}
 .card2 .g_brief {
   grid-area: g_brief;
+}
+.card2 .g_brief_trns {
+  grid-area: g_brief_trns;
 }
 .card2 .lb_details {
   grid-area: lb_details;
@@ -146,13 +161,68 @@
 .card2 .lb_details label Span {
   color: red;
 }
+.card2 .lb_details_trns {
+  grid-area: lb_details_trns;
+}
+.card2 .lb_details_trns label {
+  padding-left: 7px;
+}
+.card2 .lb_details_trns label Span {
+  color: red;
+}
 .card2 .g_details {
   grid-area: g_details;
 }
-.card2 .optionSetSelectFieldForCustomForm_defaultCustomContainer__3VCN0,
-.card2 .textFieldCustomForm_defaultCustomContainer__1R60w,
-.card2 .userNameFieldCustomForm_defaultCustomContainer__3UUau {
-  width: 100%;
+.card2 .g_details_trns {
+  grid-area: g_details_trns;
+}
+.card2 .lb_lessons_learned {
+  grid-area: lb_lessons_learned;
+}
+.card2 .lb_lessons_learned label {
+  padding-left: 7px;
+}
+.card2 .lb_lessons_learned label Span {
+  color: red;
+}
+.card2 .lb_lessons_learned_trns {
+  grid-area: lb_lessons_learned_trns;
+}
+.card2 .lb_lessons_learned_trns label {
+  padding-left: 7px;
+}
+.card2 .lb_lessons_learned_trns label Span {
+  color: red;
+}
+.card2 .lessons_learned {
+  grid-area: lessons_learned;
+}
+.card2 .lessons_learned_trns {
+  grid-area: lessons_learned_trns;
+}
+.card2 .lb_change_level {
+  grid-area: lb_change_level;
+}
+.card2 .lb_change_level label {
+  padding-left: 7px;
+}
+.card2 .lb_change_level label Span {
+  color: red;
+}
+.card2 .change_level {
+  grid-area: change_level;
+}
+.card2 .lb_change_type {
+  grid-area: lb_change_type;
+}
+.card2 .lb_change_type label {
+  padding-left: 7px;
+}
+.card2 .lb_change_type label Span {
+  color: red;
+}
+.card2 .change_type {
+  grid-area: change_type;
 }
 
 .title_uploads {
@@ -195,6 +265,7 @@
   gap: 8px 8px;
   grid-auto-flow: row;
   padding: 10px;
+  margin-bottom: 20px;
   border: 1px solid #7d7d7d;
   grid-template-areas: "uf1 ui1" "uf2 ui2" "uf3 ui3";
 }
@@ -233,6 +304,10 @@
   justify-self: start;
   align-self: center;
   padding: 8px;
+}
+
+.fos_scoring label {
+  padding-left: 7px;
 }
 
 /*# sourceMappingURL=main.css.map */
