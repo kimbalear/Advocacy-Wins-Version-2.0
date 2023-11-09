@@ -104,14 +104,14 @@
 
 .card2 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(18, auto);
   gap: 8px 8px;
   grid-auto-flow: row;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #7d7d7d;
-  grid-template-areas: "lb_cfrm lb_cfrm" "g_inputf g_inputf" "lb_brief lb_brief_trns" "g_brief g_brief_trns" "lb_details lb_details_trns" "g_details g_details_trns" "lb_lessons_learned lb_lessons_learned_trns" "lessons_learned lessons_learned_trns" "lb_change_level lb_change_level" "change_level change_level" "lb_change_type lb_change_type" "change_type change_type";
+  grid-template-areas: "lb_cfrm " "g_inputf" "lb_brief" "g_brief" "lb_brief_trns" "g_brief_trns" "lb_details" "g_details" "lb_details_trns" "g_details_trns" "lb_lessons_learned" "lessons_learned" "lb_lessons_learned_trns" "lessons_learned_trns" "lb_change_level" "change_level" "lb_change_type" "change_type";
 }
 .card2 .lb_cfrm {
   grid-area: lb_cfrm;
@@ -223,6 +223,16 @@
 }
 .card2 .change_type {
   grid-area: change_type;
+}
+.card2 #nTbcBfQZW9X-sA82BaO7QQa-val,
+.card2 #nTbcBfQZW9X-J7LzW2muqTp-val,
+.card2 #nTbcBfQZW9X-rHGuINTVs2L-val,
+.card2 #nTbcBfQZW9X-zNfzVJXiFkG-val,
+.card2 #nTbcBfQZW9X-w7mtkLzijNL-val,
+.card2 #nTbcBfQZW9X-xxfUP3OlqUQ-val,
+.card2 #nTbcBfQZW9X-CRxBaKd9gXn-val,
+.card2 #nTbcBfQZW9X-Ob8sJOK5ChR-val {
+  width: 100% !important;
 }
 
 .title_uploads {
