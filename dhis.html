@@ -1,380 +1,327 @@
 <script src="../../dhis-web-commons/javascripts/jquery.min.js"></script>
 <style type="text/css">#advWinsForm {
-		width: 100%;
-		height: auto;
-	}
-
-	.jss215 {
-		background-color: #fdf4e7;
-	}
-
-	.jss424 {
-		border: 1px solid #7d7d7d;
-	}
-
-	.advc {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: auto auto;
-		grid-auto-columns: 1fr;
-		gap: 8px 8px;
-		grid-auto-flow: row;
-		padding: 10px;
-		border: 1px solid #7d7d7d;
-		margin-bottom: 20px;
-		grid-template-areas: "advc_title" "advc_stage";
-	}
-
-	.advc .advc_title {
-		grid-area: advc_title;
-	}
-
-	.advc .advc_title label {
-		font-size: 16px;
-		font-weight: 500;
-	}
-
-	.advc .advc_stage {
-		display: grid;
-		grid-template-columns: auto 1fr;
-		grid-template-rows: 1fr;
-		gap: 0px 8px;
-		grid-auto-flow: row;
-		grid-template-areas: "lb slctbox";
-		grid-area: advc_stage;
-	}
-
-	.advc .advc_stage .lb {
-		grid-area: lb;
-		justify-self: stretch;
-		align-self: center;
-	}
-
-	.advc .advc_stage .lb label {
-		padding-left: 7px;
-	}
-
-	.advc .advc_stage .lb label Span {
-		color: red;
-	}
-
-	.advc .advc_stage .slctbox {
-		grid-area: slctbox;
-	}
-
-	.advc .advc_stage .slctbox #nTbcBfQZW9X-DTIsk9cDl8u-val {
-		width: 100%;
-	}
-
-	.card1 {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: auto auto;
-		gap: 8px 8px;
-		grid-auto-flow: row;
-		padding: 10px;
-		margin-bottom: 20px;
-		border: 1px solid #7d7d7d;
-		grid-template-areas: "lb_cfrm" "g_inputf";
-	}
-
-	.card1 .lb_cfrm {
-		grid-area: lb_cfrm;
-	}
-
-	.card1 .lb_cfrm label {
-		padding-left: 7px;
-	}
-
-	.card1 .lb_cfrm label Span {
-		color: rgb(4, 0, 255);
-	}
-
-	.card1 .g_inputf {
-		grid-area: g_inputf;
-		width: 100%;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr;
-		grid-auto-columns: 1fr;
-		gap: 8px 8px;
-		grid-auto-flow: row;
-		padding: 10px;
-		grid-template-areas: "lft rgth";
-	}
-
-	.card1 .g_inputf .lft {
-		grid-area: lft;
-		justify-self: start;
-		align-self: center;
-		padding: 8px;
-	}
-
-	.card1 .g_inputf .rgth {
-		grid-area: rgth;
-		justify-self: start;
-		align-self: center;
-		padding: 8px;
-	}
-
-	.card2 {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
-		gap: 8px 8px;
-		grid-auto-flow: row;
-		padding: 10px;
-		margin-bottom: 20px;
-		border: 1px solid #7d7d7d;
-		grid-template-areas: "lb_cfrm lb_cfrm" "g_inputf g_inputf" "lb_brief lb_brief_trns" "g_brief g_brief_trns" "lb_details lb_details_trns" "g_details g_details_trns" "lb_lessons_learned lb_lessons_learned_trns" "lessons_learned lessons_learned_trns" "lb_change_level lb_change_level" "change_level change_level" "lb_change_type lb_change_type" "change_type change_type";
-	}
-
-	.card2 .lb_cfrm {
-		grid-area: lb_cfrm;
-	}
-
-	.card2 .lb_cfrm label {
-		padding-left: 7px;
-	}
-
-	.card2 .lb_cfrm label Span {
-		color: red;
-	}
-
-	.card2 .g_inputf {
-		grid-area: g_inputf;
-	}
-
-	.card2 .g_inputf .lb_otherField {
-		padding: 8px 0;
-	}
-
-	.card2 .lb_brief {
-		grid-area: lb_brief;
-	}
-
-	.card2 .lb_brief label {
-		padding-left: 7px;
-	}
-
-	.card2 .lb_brief label Span {
-		color: red;
-	}
-
-	.card2 .lb_brief_trns {
-		grid-area: lb_brief_trns;
-	}
-
-	.card2 .lb_brief_trns label {
-		padding-left: 7px;
-	}
-
-	.card2 .lb_brief_trns label Span {
-		color: red;
-	}
-
-	.card2 .g_brief {
-		grid-area: g_brief;
-	}
-
-	.card2 .g_brief_trns {
-		grid-area: g_brief_trns;
-	}
-
-	.card2 .lb_details {
-		grid-area: lb_details;
-	}
-
-	.card2 .lb_details label {
-		padding-left: 7px;
-	}
-
-	.card2 .lb_details label Span {
-		color: red;
-	}
-
-	.card2 .lb_details_trns {
-		grid-area: lb_details_trns;
-	}
-
-	.card2 .lb_details_trns label {
-		padding-left: 7px;
-	}
-
-	.card2 .lb_details_trns label Span {
-		color: red;
-	}
-
-	.card2 .g_details {
-		grid-area: g_details;
-	}
-
-	.card2 .g_details_trns {
-		grid-area: g_details_trns;
-	}
-
-	.card2 .lb_lessons_learned {
-		grid-area: lb_lessons_learned;
-	}
-
-	.card2 .lb_lessons_learned label {
-		padding-left: 7px;
-	}
-
-	.card2 .lb_lessons_learned label Span {
-		color: red;
-	}
-
-	.card2 .lb_lessons_learned_trns {
-		grid-area: lb_lessons_learned_trns;
-	}
-
-	.card2 .lb_lessons_learned_trns label {
-		padding-left: 7px;
-	}
-
-	.card2 .lb_lessons_learned_trns label Span {
-		color: red;
-	}
-
-	.card2 .lessons_learned {
-		grid-area: lessons_learned;
-	}
-
-	.card2 .lessons_learned_trns {
-		grid-area: lessons_learned_trns;
-	}
-
-	.card2 .lb_change_level {
-		grid-area: lb_change_level;
-	}
-
-	.card2 .lb_change_level label {
-		padding-left: 7px;
-	}
-
-	.card2 .lb_change_level label Span {
-		color: red;
-	}
-
-	.card2 .change_level {
-		grid-area: change_level;
-	}
-
-	.card2 .lb_change_type {
-		grid-area: lb_change_type;
-	}
-
-	.card2 .lb_change_type label {
-		padding-left: 7px;
-	}
-
-	.card2 .lb_change_type label Span {
-		color: red;
-	}
-
-	.card2 .change_type {
-		grid-area: change_type;
-	}
-
-	.title_uploads {
-		width: 100%;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: auto;
-		gap: 8px 8px;
-		grid-auto-flow: row;
-		margin-bottom: 8px;
-		grid-template-areas: "uft uit";
-	}
-
-	.title_uploads .uft {
-		grid-area: uft;
-	}
-
-	.title_uploads .uft label {
-		font-size: 16px;
-		font-weight: 500;
-	}
-
-	.title_uploads .uft label Span {
-		color: red;
-	}
-
-	.title_uploads .uit {
-		grid-area: uit;
-	}
-
-	.title_uploads .uit label {
-		font-size: 16px;
-		font-weight: 500;
-	}
-
-	.title_uploads .uit label Span {
-		color: red;
-	}
-
-	.uploads {
-		width: 100%;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr auto auto auto;
-		grid-auto-columns: 1fr;
-		gap: 8px 8px;
-		grid-auto-flow: row;
-		padding: 10px;
-		margin-bottom: 20px;
-		border: 1px solid #7d7d7d;
-		grid-template-areas: "uf1 ui1" "uf2 ui2" "uf3 ui3";
-	}
-
-	.uploads .uf1 {
-		grid-area: uf1;
-		justify-self: start;
-		align-self: center;
-		padding: 8px;
-	}
-
-	.uploads .ui1 {
-		grid-area: ui1;
-		justify-self: start;
-		align-self: center;
-		padding: 8px;
-	}
-
-	.uploads .uf2 {
-		grid-area: uf2;
-		justify-self: start;
-		align-self: center;
-		padding: 8px;
-	}
-
-	.uploads .ui2 {
-		grid-area: ui2;
-		justify-self: start;
-		align-self: center;
-		padding: 8px;
-	}
-
-	.uploads .uf3 {
-		grid-area: uf3;
-		justify-self: start;
-		align-self: center;
-		padding: 8px;
-	}
-
-	.uploads .ui3 {
-		grid-area: ui3;
-		justify-self: start;
-		align-self: center;
-		padding: 8px;
-	}
-
-	.fos_scoring label {
-		padding-left: 7px;
-	}
-
-	/*# sourceMappingURL=main.css.map */
+  width: 100%;
+  height: auto;
+}
+
+.jss215 {
+  background-color: #fdf4e7;
+}
+
+.jss424 {
+  border: 1px solid #7d7d7d;
+}
+
+.advc {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  grid-auto-columns: 1fr;
+  gap: 8px 8px;
+  grid-auto-flow: row;
+  padding: 10px;
+  border: 1px solid #7d7d7d;
+  margin-bottom: 20px;
+  grid-template-areas: "advc_title" "advc_stage";
+}
+.advc .advc_title {
+  grid-area: advc_title;
+}
+.advc .advc_title label {
+  font-size: 16px;
+  font-weight: 500;
+}
+.advc .advc_stage {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 8px;
+  grid-auto-flow: row;
+  grid-template-areas: "lb slctbox";
+  grid-area: advc_stage;
+}
+.advc .advc_stage .lb {
+  grid-area: lb;
+  justify-self: stretch;
+  align-self: center;
+}
+.advc .advc_stage .lb label {
+  padding-left: 7px;
+}
+.advc .advc_stage .lb label Span {
+  color: red;
+}
+.advc .advc_stage .slctbox {
+  grid-area: slctbox;
+}
+.advc .advc_stage .slctbox #nTbcBfQZW9X-DTIsk9cDl8u-val {
+  width: 100%;
+}
+
+.card1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 8px 8px;
+  grid-auto-flow: row;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #7d7d7d;
+  grid-template-areas: "lb_cfrm" "g_inputf";
+}
+.card1 .lb_cfrm {
+  grid-area: lb_cfrm;
+}
+.card1 .lb_cfrm label {
+  padding-left: 7px;
+}
+.card1 .lb_cfrm label Span {
+  color: rgb(4, 0, 255);
+}
+.card1 .g_inputf {
+  grid-area: g_inputf;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-columns: 1fr;
+  gap: 8px 8px;
+  grid-auto-flow: row;
+  padding: 10px;
+  grid-template-areas: "lft rgth";
+}
+.card1 .g_inputf .lft {
+  grid-area: lft;
+  justify-self: start;
+  align-self: center;
+  padding: 8px;
+}
+.card1 .g_inputf .rgth {
+  grid-area: rgth;
+  justify-self: start;
+  align-self: center;
+  padding: 8px;
+}
+
+.card2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(18, auto);
+  gap: 8px 8px;
+  grid-auto-flow: row;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #7d7d7d;
+  grid-template-areas: "lb_cfrm " "g_inputf" "lb_brief" "g_brief" "lb_brief_trns" "g_brief_trns" "lb_details" "g_details" "lb_details_trns" "g_details_trns" "lb_lessons_learned" "lessons_learned" "lb_lessons_learned_trns" "lessons_learned_trns" "lb_change_level" "change_level" "lb_change_type" "change_type";
+}
+.card2 .lb_cfrm {
+  grid-area: lb_cfrm;
+}
+.card2 .lb_cfrm label {
+  padding-left: 7px;
+}
+.card2 .lb_cfrm label Span {
+  color: red;
+}
+.card2 .g_inputf {
+  grid-area: g_inputf;
+}
+.card2 .g_inputf .lb_otherField {
+  padding: 8px 0;
+}
+.card2 .lb_brief {
+  grid-area: lb_brief;
+}
+.card2 .lb_brief label {
+  padding-left: 7px;
+}
+.card2 .lb_brief label Span {
+  color: red;
+}
+.card2 .lb_brief_trns {
+  grid-area: lb_brief_trns;
+}
+.card2 .lb_brief_trns label {
+  padding-left: 7px;
+}
+.card2 .lb_brief_trns label Span {
+  color: red;
+}
+.card2 .g_brief {
+  grid-area: g_brief;
+}
+.card2 .g_brief_trns {
+  grid-area: g_brief_trns;
+}
+.card2 .lb_details {
+  grid-area: lb_details;
+}
+.card2 .lb_details label {
+  padding-left: 7px;
+}
+.card2 .lb_details label Span {
+  color: red;
+}
+.card2 .lb_details_trns {
+  grid-area: lb_details_trns;
+}
+.card2 .lb_details_trns label {
+  padding-left: 7px;
+}
+.card2 .lb_details_trns label Span {
+  color: red;
+}
+.card2 .g_details {
+  grid-area: g_details;
+}
+.card2 .g_details_trns {
+  grid-area: g_details_trns;
+}
+.card2 .lb_lessons_learned {
+  grid-area: lb_lessons_learned;
+}
+.card2 .lb_lessons_learned label {
+  padding-left: 7px;
+}
+.card2 .lb_lessons_learned label Span {
+  color: red;
+}
+.card2 .lb_lessons_learned_trns {
+  grid-area: lb_lessons_learned_trns;
+}
+.card2 .lb_lessons_learned_trns label {
+  padding-left: 7px;
+}
+.card2 .lb_lessons_learned_trns label Span {
+  color: red;
+}
+.card2 .lessons_learned {
+  grid-area: lessons_learned;
+}
+.card2 .lessons_learned_trns {
+  grid-area: lessons_learned_trns;
+}
+.card2 .lb_change_level {
+  grid-area: lb_change_level;
+}
+.card2 .lb_change_level label {
+  padding-left: 7px;
+}
+.card2 .lb_change_level label Span {
+  color: red;
+}
+.card2 .change_level {
+  grid-area: change_level;
+}
+.card2 .lb_change_type {
+  grid-area: lb_change_type;
+}
+.card2 .lb_change_type label {
+  padding-left: 7px;
+}
+.card2 .lb_change_type label Span {
+  color: red;
+}
+.card2 .change_type {
+  grid-area: change_type;
+}
+.card2 #nTbcBfQZW9X-sA82BaO7QQa-val,
+.card2 #nTbcBfQZW9X-J7LzW2muqTp-val,
+.card2 #nTbcBfQZW9X-rHGuINTVs2L-val,
+.card2 #nTbcBfQZW9X-zNfzVJXiFkG-val,
+.card2 #nTbcBfQZW9X-w7mtkLzijNL-val,
+.card2 #nTbcBfQZW9X-xxfUP3OlqUQ-val,
+.card2 #nTbcBfQZW9X-CRxBaKd9gXn-val,
+.card2 #nTbcBfQZW9X-Ob8sJOK5ChR-val {
+  width: 100% !important;
+}
+
+.title_uploads {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 8px 8px;
+  grid-auto-flow: row;
+  margin-bottom: 8px;
+  grid-template-areas: "uft uit";
+}
+.title_uploads .uft {
+  grid-area: uft;
+}
+.title_uploads .uft label {
+  font-size: 16px;
+  font-weight: 500;
+}
+.title_uploads .uft label Span {
+  color: red;
+}
+.title_uploads .uit {
+  grid-area: uit;
+}
+.title_uploads .uit label {
+  font-size: 16px;
+  font-weight: 500;
+}
+.title_uploads .uit label Span {
+  color: red;
+}
+
+.uploads {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto auto auto;
+  grid-auto-columns: 1fr;
+  gap: 8px 8px;
+  grid-auto-flow: row;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #7d7d7d;
+  grid-template-areas: "uf1 ui1" "uf2 ui2" "uf3 ui3";
+}
+.uploads .uf1 {
+  grid-area: uf1;
+  justify-self: start;
+  align-self: center;
+  padding: 8px;
+}
+.uploads .ui1 {
+  grid-area: ui1;
+  justify-self: start;
+  align-self: center;
+  padding: 8px;
+}
+.uploads .uf2 {
+  grid-area: uf2;
+  justify-self: start;
+  align-self: center;
+  padding: 8px;
+}
+.uploads .ui2 {
+  grid-area: ui2;
+  justify-self: start;
+  align-self: center;
+  padding: 8px;
+}
+.uploads .uf3 {
+  grid-area: uf3;
+  justify-self: start;
+  align-self: center;
+  padding: 8px;
+}
+.uploads .ui3 {
+  grid-area: ui3;
+  justify-self: start;
+  align-self: center;
+  padding: 8px;
+}
+
+.fos_scoring label {
+  padding-left: 7px;
+}
+
+/*# sourceMappingURL=main.css.map */
 </style>
 <div class="loaderDiv" id="formLoadingDiv" style="display: none"><br />
 <br />
@@ -387,7 +334,7 @@
 
 <div id="advWinsForm">
 <div class="advc">
-<div class="advc_title"><label keyword="opt_c:form_label_advocacyTracker">Advocacy Tracker </label> <a href="https://docs.google.com/document/d/172FH65oMaIc2fFI3Ug0QT0TybZBPODsKIhg9Dm4Pd78" style="font-style: italic; font-size: 10px" target="_blank">( v 1.2 )</a></div>
+<div class="advc_title"><label keyword="opt_c:form_label_advocacyTracker">Advocacy Tracker </label> <a href="https://docs.google.com/document/d/172FH65oMaIc2fFI3Ug0QT0TybZBPODsKIhg9Dm4Pd78" style="font-style: italic; font-size: 10px" target="_blank">( v 1.3 )</a></div>
 
 <div class="advc_stage">
 <div class="lb"><label keyword="opt_c:form_label_advocacyStage">Advocacy Stage <span>*</span></label></div>
@@ -419,7 +366,7 @@
 
 <div class="g_brief"><input id="nTbcBfQZW9X-rHGuINTVs2L-val" name="entryfield" title="Adv Tracker 1 - Brief" value="[ Adv Tracker 1 - Brief ]" /></div>
 
-<div class="lb_brief_trns">&nbsp;</div>
+<div class="lb_brief_trns">Brief Translations</div>
 
 <div class="g_brief_trns"><input id="nTbcBfQZW9X-zNfzVJXiFkG-val" name="entryfield" title="Adv Tracker 1 - Brief Translations" value="[ Adv Tracker 1 - Brief Translations ]" /></div>
 
@@ -427,7 +374,7 @@
 
 <div class="g_details"><input id="nTbcBfQZW9X-w7mtkLzijNL-val" name="entryfield" title="Adv Tracker 1 - Detail" value="[ Adv Tracker 1 - Detail ]" /></div>
 
-<div class="lb_details_trns">&nbsp;</div>
+<div class="lb_details_trns">Detail Translations</div>
 
 <div class="g_details_trns"><input id="nTbcBfQZW9X-xxfUP3OlqUQ-val" name="entryfield" title="Adv Tracker 1 - Detail Translations" value="[ Adv Tracker 1 - Detail Translations ]" /></div>
 
@@ -435,13 +382,13 @@
 
 <div class="lessons_learned" name="lessonsLearnedField"><input id="nTbcBfQZW9X-CRxBaKd9gXn-val" name="entryfield" title="Adv Tracker 1 - Lessons Learned" value="[ Adv Tracker 1 - Lessons Learned ]" /></div>
 
-<div class="lb_lessons_learned_trns">&nbsp;</div>
+<div class="lb_lessons_learned_trns">Lessons Learned Translations</div>
 
 <div class="lessons_learned_trns"><input id="nTbcBfQZW9X-Ob8sJOK5ChR-val" name="entryfield" title="Adv Tracker 1 - Lessons Learned Translations" value="[ Adv Tracker 1 - Lessons Learned Translations ]" /></div>
 
 <div class="lb_change_level"><label keyword="opt_c:Change_Level" name="changeLevelUidField">Change_Level</label></div>
 
-<div class="change_level" name="changeLevelUidField"><input id="nTbcBfQZW9X-nvVyqoUNG7l-val" name="entryfield" title="Advocacy - Change Level " value="[ Advocacy - Change Level  ]" /></div>
+<div class="change_level" name="changeLevelUidField"><input id="nTbcBfQZW9X-nvVyqoUNG7l-val" name="entryfield" title="Advocacy - Change Level" value="[ Advocacy - Change Level ]" /></div>
 
 <div class="lb_change_type"><label keyword="opt_c:Change_Type" name="changeTypeUidField">Change_Type</label></div>
 
@@ -454,7 +401,7 @@
 <div class="uit"><label keyword="opt_c:imageUpload">Upload images</label></div>
 </div>
 
-<div class="uploads" name="fileFields">.
+<div class="uploads" name="fileFields">
 <div class="uf1"><input id="nTbcBfQZW9X-HQne4xhecd0-val" name="entryfield" title="Adv Tracker 1 - File 1" value="[ Adv Tracker 1 - File 1 ]" /></div>
 
 <div class="ui1"><input id="nTbcBfQZW9X-EfAIFxequNP-val" name="entryfield" title="Adv Tracker 1 - Image 1" value="[ Adv Tracker 1 - Image 1 ]" /></div>
@@ -477,580 +424,620 @@
 <div class="fos_scoring" name="advFOSScoring"><label keyword="opt_c:advocacy_FOS_Scoring">Advocacy FOS Scoring</label> <input id="nTbcBfQZW9X-dHptKL9P6U3-val" name="entryfield" title="Advocacy - FOS Scoring" value="[ Advocacy - FOS Scoring ]" /></div>
 </div>
 <script>
-	console.log("============= START FORM ");
-	new AdvocacyWinsForm();
-
-	function AdvocacyWinsForm() {
-		var me = this;
-
-		me.openApp;
-		me.mode;
-
-		// --------------------------------------------
-		// Variables
-
-		me.DE_AVOCACY_STAGE_ID = "DTIsk9cDl8u";
-		me.DE_SRHRJ_RELATED_TO_ID = "sA82BaO7QQa";
-		me.OPTION_SET_TERMS_ID = "su0Xx7sHb1R";
-		me.ID_FOS_USER_GROUP = "uKgyk1wF8ME";
-
-		me.PARAMS_EVENT_ID = "@PARAMS_EVENT_ID";
-
-		me.keyDbLocale;
-
-		me.formLoadingDivTag = document.getElementById("formLoadingDiv");
-		me.advWinsFormTag = document.getElementById("advWinsForm");
-		// me.goBackToAppBtnTag = document.getElementById("goBackToAppBtn");
-
-		me.FIELD_AVOCACY_STAGE_ID =
-			"nTbcBfQZW9X-" + me.DE_AVOCACY_STAGE_ID + "-val";
-		me.FIELD_ASRHRJ_RELATED_TO_ID =
-			"nTbcBfQZW9X-" + me.DE_SRHRJ_RELATED_TO_ID + "-val";
-		me.FIELD_FILE_1_ID = "nTbcBfQZW9X-HQne4xhecd0-val";
-		me.FIELD_FILE_2_ID = "nTbcBfQZW9X-RlDreRbw0ms-val";
-		me.FIELD_FILE_3_ID = "nTbcBfQZW9X-lLqmr26KzfY-val";
-		me.FIELD_IMAGE_1_ID = "nTbcBfQZW9X-EfAIFxequNP-val";
-		me.FIELD_IMAGE_2_ID = "nTbcBfQZW9X-WdTQNq3sKxA-val";
-		me.FIELD_IMAGE_3_ID = "nTbcBfQZW9X-iMjmZpoX5og-val";
-
-		me.FIELD_DE_BRIEF_TRANSLATION = "nTbcBfQZW9X-zNfzVJXiFkG-val";
-		me.FIELD_DE_DETAILS_TRANSLATION = "nTbcBfQZW9X-xxfUP3OlqUQ-val";
-		me.FIELD_DE_LESSION_LEARNED_TRANSLATION = "nTbcBfQZW9X-Ob8sJOK5ChR-val";
-
-		// <deId>.<option display name> = code
-		me.deMap = {};
-		// <option-code> = <option-displayName>
-		me.optionMap = {};
-
-		me.eventData;
-
-		// --------------------------------------------
-		// URLs
-
-		me.QUERY_URL_USER = encodeURI("../api/me.json?fields=userGroups,settings");
-		me.QUERY_URL_DATA_ELEMENTS = encodeURI(
-			"../api/dataElements.json?fields=id,name,optionSet[options[displayName,code]]&filter=id:in:[" +
-			me.DE_AVOCACY_STAGE_ID +
-			"," +
-			me.DE_SRHRJ_RELATED_TO_ID +
-			"]&paging=false"
-		);
-		me.QUERY_URL_DATA_VALUES = encodeURI(
-			"../api/events/" + me.PARAMS_EVENT_ID + ".json"
-		);
-		me.QUERY_URL_OPTION_SET_TERMS = encodeURI(
-			"../api/optionSets/" +
-			me.OPTION_SET_TERMS_ID +
-			".json?fields=options[code,displayName]&paging=false"
-		);
-
-		// --------------------------------------------
-		// init method
-
-		me.init = function () {
-			me.showForm(false);
-
-			me.openApp = me.getURLParameterByName(window.location.href, "openApp");
-			me.mode = me.getURLParameterByName(window.location.href, "mode");
-			// me.goBackToAppAfterEditing();
-
-			me.loadUserInfo(function (success) {
-				if (success) {
-
-					var fosScoringTag = document.querySelectorAll("[name='advFOSScoring']");
-					if( me.isFOSGroup )
-					{
-						me.toggle(fosScoringTag, "");
-					}
-					else
-					{
-						me.toggle(fosScoringTag, "none");
-					}
-					
-					// Load translation and init data
-					me.loadOptionSet(function (optionSetSuccess) {
-						if (optionSetSuccess) {
-							me.loadDataElements(function (responseSuccess, data) {
-								if (responseSuccess) {
-									me.loadEventData(function (eventResponseData) {
-										if (eventResponseData) {
-											me.setUp_Events();
-										}
-
-										me.showForm(true);
-									});
-								} else {
-									me.showForm(true);
-								}
-							});
-						} else {
-							me.showForm(true);
-						}
-					});
-				} else {
-					me.showForm(true);
-				}
-			});
-		};
-
-		// For adding a new event, if the form is opened from the Application, then redirect to the app after adding the event
-		window.addEventListener("popstate", function () {
-			if (me.openApp != undefined && me.openApp == "true" && me.mode == "add") {
-				setTimeout(() => {
-					window.location.href =
-						"../../api/apps/AdvocacyTrackingTool/index.html";
-				}, 1000);
-			}
-		});
-
-		me.initEditForm = true;
-		// // For editing an event, if the form is opened from the Application, then redirect to the app after editing
-		// me.goBackToAppAfterEditing = function () {
-		// 	if (me.mode == "edit") {
-		// 		me.initEditForm = true;
-		// 	}
-
-		// 	if (
-		// 		me.openApp != undefined &&
-		// 		me.openApp == "true" &&
-		// 		me.mode == "edit"
-		// 	) {
-		// 		setInterval(function () {
-		// 			if (
-		// 				!me.initEditForm &&
-		// 				document.getElementsByTagName("input").length == 0
-		// 			) {
-		// 				me.goBackToAppBtnTag.click();
-		// 			} else if (document.getElementsByTagName("input").length > 0) {
-		// 				me.initEditForm = false;
-		// 			}
-		// 		}, 3000);
-		// 	}
-		// };
-
-		me.loadUserInfo = function (exeFunc) {
-			me.loadData(me.QUERY_URL_USER, function (success, response) {
-				if (success) {
-					const userData = JSON.parse(response.responseText);
-					me.keyDbLocale = userData.settings.keyDbLocale;
-					me.isFOSGroup = (userData.userGroups.filter(function (group) { return group.id == me.ID_FOS_USER_GROUP })).length > 0;
-				}
-				exeFunc(success, response);
-			});
-		};
-
-		me.loadDataElements = function (exeFunc) {
-			me.loadData(me.QUERY_URL_DATA_ELEMENTS, function (success, response) {
-				if (success) {
-					const data = JSON.parse(response.responseText);
-					var deList = data.dataElements;
-					for (var i = 0; i < deList.length; i++) {
-						const de = deList[i];
-						me.deMap[de.id] = {};
-						if (de.optionSet) {
-							for (var j = 0; j < de.optionSet.options.length; j++) {
-								const option = de.optionSet.options[j];
-								me.deMap[de.id][option.displayName] = option.code;
-							}
-						}
-					}
-				}
-
-				exeFunc(success, response);
-			});
-		};
-
-		me.loadEventData = function (exeFunc) {
-			const eventId = me.getURLParameterByName(
-				window.location.href,
-				"viewEventId"
-			);
-
-			// Event existed
-			if (eventId !== undefined && eventId !== "") {
-				var url = me.QUERY_URL_DATA_VALUES;
-				url = url.replace(me.PARAMS_EVENT_ID, eventId);
-
-				me.loadData(url, function (success, response) {
-					if (success) {
-						const data = JSON.parse(response.responseText);
-						me.eventData = data;
-						// For "Adv Stage" field logic
-						const advStageValue = me.findItemFromList(
-							data.dataValues,
-							me.DE_AVOCACY_STAGE_ID,
-							"dataElement"
-						);
-						if (advStageValue != undefined) {
-							me.addFormLogic_AdvStage(advStageValue.value);
-						} else {
-							me.addFormLogic_AdvStage("");
-						}
-
-						// For "SRHRJ need is this related to?" logic
-						const asrhrjValue = me.findItemFromList(
-							data.dataValues,
-							me.DE_SRHRJ_RELATED_TO_ID,
-							"dataElement"
-						);
-						if (asrhrjValue != undefined) {
-							me.addFormLogic_SRHRJRelatedTo(asrhrjValue.value);
-						} else {
-							me.addFormLogic_SRHRJRelatedTo("");
-						}
-					}
-
-					exeFunc(success, response);
-				});
-			} // New event
-			else {
-				exeFunc(true);
-			}
-		};
-
-		me.loadOptionSet = function (exeFunc) {
-			me.loadData(me.QUERY_URL_OPTION_SET_TERMS, function (success, response) {
-				if (success) {
-					var options = JSON.parse(response.responseText).options;
-					for (var j in options) {
-						var option = options[j];
-						var value = option.displayName;
-						var code = option.code;
-
-						// Translate for some detault labels
-						var labelTag = me.getElementByKeyword("opt_c:" + code);
-						if (labelTag != null) {
-							labelTag.innerHTML = value;
-						}
-
-						me.optionMap[code] = value;
-					}
-
-					exeFunc(true);
-				} else {
-					exeFunc(false);
-				}
-			});
-		};
-
-		// --------------------------------------------
-		// Setup Events
-
-		me.setUp_Events = function () {
-			var advStageTag = document.getElementById(me.FIELD_AVOCACY_STAGE_ID);
-			advStageTag.addEventListener(
-				"DOMCharacterDataModified",
-				function (event) {
-					const advStageValueTags =
-						advStageTag.getElementsByClassName("Select-value-label");
-					const newValue =
-						advStageValueTags.length > 0
-							? advStageValueTags[0].textContent
-							: "";
-					me.addFormLogic_AdvStage(me.deMap[me.DE_AVOCACY_STAGE_ID][newValue]);
-				},
-				false
-			);
-
-			advStageTag.addEventListener(
-				"DOMNodeInserted",
-				function (event) {
-					const advStageValueTags =
-						advStageTag.getElementsByClassName("Select-value-label");
-					if (advStageValueTags.length > 0) {
-						var selectedDisplayValue = advStageValueTags[0].textContent;
-						var selectedCode =
-							me.deMap[me.DE_AVOCACY_STAGE_ID][selectedDisplayValue];
-						me.addFormLogic_AdvStage(selectedCode);
-					} else {
-						me.addFormLogic_AdvStage("");
-					}
-				},
-				false
-			);
-
-			// Show / Hide "Other" field
-			var advASRHRJRelatedToTag = document.getElementById(
-				me.FIELD_ASRHRJ_RELATED_TO_ID
-			);
-			advASRHRJRelatedToTag.addEventListener(
-				"DOMCharacterDataModified",
-				function (event) {
-					const advValueTags =
-						advASRHRJRelatedToTag.getElementsByClassName("Select-value-label");
-					const newValue =
-						advValueTags.length > 0 ? advValueTags[0].textContent : "";
-					me.addFormLogic_SRHRJRelatedTo(
-						me.deMap[me.DE_SRHRJ_RELATED_TO_ID][newValue]
-					);
-				},
-				false
-			);
-
-			advASRHRJRelatedToTag.addEventListener(
-				"DOMNodeInserted",
-				function (event) {
-					const advStageValueTags =
-						advASRHRJRelatedToTag.getElementsByClassName("Select-value-label");
-					if (advStageValueTags.length > 0) {
-						var selectedDisplayValue = advStageValueTags[0].textContent;
-						var selectedCode =
-							me.deMap[me.DE_SRHRJ_RELATED_TO_ID][selectedDisplayValue];
-						me.addFormLogic_SRHRJRelatedTo(selectedCode);
-					} else {
-						me.addFormLogic_SRHRJRelatedTo("");
-					}
-				},
-				false
-			);
-		};
-
-		// --------------------------------------------
-		// Supportive methods
-
-		me.showForm = function (showed) {
-			if (showed) {
-				me.formLoadingDivTag.style.display = "none";
-				me.advWinsFormTag.style.display = "";
-			} else {
-				me.formLoadingDivTag.style.display = "";
-				me.advWinsFormTag.style.display = "none";
-			}
-		};
-
-		me.getURLParameterByName = function (url, name) {
-			name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-			var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-				results = regex.exec(url);
-			return results == null
-				? ""
-				: decodeURIComponent(results[1].replace(/\+/g, " "));
-		};
-
-		me.findItemFromList = function (list, value, propertyName) {
-			var item;
-
-			if (list) {
-				if (propertyName === undefined) {
-					propertyName = "id";
-				}
-
-				for (i = 0; i < list.length; i++) {
-					var listItem = list[i];
-
-					if (listItem[propertyName] == value) {
-						item = listItem;
-						break;
-					}
-				}
-			}
-
-			return item;
-		};
-
-		me.getElementByKeyword = function (key) {
-			return document.querySelector('[keyword="' + key + '"]');
-		};
-
-		me.addFormLogic_AdvStage = function (advStageCode) {
-			var lessonsLearnedFieldTags = document.getElementsByName("lessonsLearnedField");
-			var changeLevelUidFieldTag = document.getElementsByName("changeLevelUidField");
-			var changeTypeUidFieldTag = document.getElementsByName("changeTypeUidField");
-			var periodOfTimeOrStatusFieldTag = document.getElementsByName("periodOfTimeOrStatusField");
-			var dateOfCompletionFieldTag = document.getElementsByName("dateOfCompletionField");
-			var fileFieldtags = document.getElementsByName("fileFields");
-
-			
-			var reportDateTag = document
-				.querySelector("[data-test='dataentry-field-occurredAt']")
-				.getElementsByClassName("label_labelContainer__2mJzC")[0].lastChild;
-			var briefTag = me.getElementByKeyword("brief");
-			var detailTag = me.getElementByKeyword("detail");
-			var fileUploadTag = me.getElementByKeyword("fileUpload");
-			var lessonsLearnedTag = me.getElementByKeyword("lessonsLearned");
-
-			
-			// var briefTranslationFieldTags = document.querySelectorAll(`[id='${me.FIELD_DE_BRIEF_TRANSLATION}']`);
-			// var detailsTranslationFieldTags = document.querySelectorAll(`[id='${me.FIELD_DE_DETAILS_TRANSLATION}']`);
-			var lessonsLearnedTranslationFieldTags = document.querySelectorAll(`[id='${me.FIELD_DE_LESSION_LEARNED_TRANSLATION}']`);
-
-			
-			// me.toggle(briefTranslationFieldTags, "none");
-			// me.toggle(detailsTranslationFieldTags, "none");
-			// me.toggle(lessonsLearnedTranslationFieldTags, "none");
-
-			// lessonsLearnedTag.html("Lessons Learned"); // Default value
-
-			if (advStageCode == "Advstages1") { // Contribution
-				me.toggle(lessonsLearnedFieldTags, "none");
-				me.toggle(lessonsLearnedTranslationFieldTags, "none");
-				me.toggle(changeLevelUidFieldTag, "none");
-				me.toggle(changeTypeUidFieldTag, "none");
-				me.toggle(fileFieldtags, "");
-				me.toggle(periodOfTimeOrStatusFieldTag, "");
-				me.toggle(dateOfCompletionFieldTag, "");
-
-				reportDateTag.innerHTML =
-					me.optionMap["Contribution_Date"] +
-					" <span style='color:red'>&nbsp;*</span>";
-				briefTag.innerHTML = me.optionMap["Contribution_Brief"];
-				detailTag.innerHTML = me.optionMap["Contribution_Detail"];
-				fileUploadTag.innerHTML = me.optionMap["Contribution_File_Upload"];
-			} else if (advStageCode == "Advstages2") { // Regression Introduced"
-				me.toggle(lessonsLearnedFieldTags, "none");
-				me.toggle(lessonsLearnedTranslationFieldTags, "none");
-				me.toggle(periodOfTimeOrStatusFieldTag, "none");
-				me.toggle(dateOfCompletionFieldTag, "none");
-				me.toggle(changeLevelUidFieldTag, "");
-				me.toggle(changeTypeUidFieldTag, "");
-				me.toggle(fileFieldtags, "");
-
-				reportDateTag.innerHTML = me.optionMap["Regression Introduced_Date"] + " <span style='color:red'>&nbsp;*</span>";
-				briefTag.innerHTML = me.optionMap["Regression Introduced_Brief"];
-				detailTag.innerHTML = me.optionMap["Regression Introduced_Detail"];
-				fileUploadTag.innerHTML = me.optionMap["Regression Introduced_File_Upload"];
-			} else if (advStageCode == "Advstages4") { //Loss
-				me.toggle(periodOfTimeOrStatusFieldTag, "none");
-				me.toggle(dateOfCompletionFieldTag, "none");
-
-				me.toggle(lessonsLearnedFieldTags, "");
-				me.toggle(lessonsLearnedTranslationFieldTags, "");
-
-				me.toggle(changeLevelUidFieldTag, "");
-				me.toggle(changeTypeUidFieldTag, "");
-				me.toggle(fileFieldtags, "");
-
-				reportDateTag.innerHTML = me.optionMap["Loss_Date"] + " <span style='color:red'>&nbsp;*</span>";
-				briefTag.innerHTML = me.optionMap["Loss_Brief"];
-				detailTag.innerHTML = me.optionMap["Loss_Detail"];
-				lessonsLearnedTag.innerHTML = me.optionMap["Loss_Lessons_Learned"];
-				fileUploadTag.innerHTML = me.optionMap["Loss_File_Upload"];
-			} else if (advStageCode == "Advstages3") { // Defended
-				me.toggle(periodOfTimeOrStatusFieldTag, "none");
-				me.toggle(dateOfCompletionFieldTag, "none");
-
-				me.toggle(lessonsLearnedFieldTags, "");
-				me.toggle(lessonsLearnedTranslationFieldTags, "");
-
-				me.toggle(changeLevelUidFieldTag, "");
-				me.toggle(changeTypeUidFieldTag, "");
-				me.toggle(fileFieldtags, "");
-
-				// Set the translations
-				reportDateTag.innerHTML = me.optionMap["Defended_Date"] + " <span style='color:red'>&nbsp;*</span>";
-				briefTag.innerHTML = me.optionMap["Defended_Brief"];
-				detailTag.innerHTML = me.optionMap["Defended_Detail"];
-				lessonsLearnedTag.innerHTML = me.optionMap["Defended_Lessons_Learned"];
-				fileUploadTag.innerHTML = me.optionMap["Defended_File_Upload"];
-			} else if (advStageCode == "Advstages5") {
-				// Reform Introduced
-				me.toggle(periodOfTimeOrStatusFieldTag, "none");
-				me.toggle(dateOfCompletionFieldTag, "none");
-				me.toggle(lessonsLearnedFieldTags, "none");
-				me.toggle(lessonsLearnedTranslationFieldTags, "none");
-				me.toggle(changeLevelUidFieldTag, "");
-				me.toggle(changeTypeUidFieldTag, "");
-				me.toggle(fileFieldtags, "");
-
-				reportDateTag.innerHTML = me.optionMap["Reform Introduced_Date"] + " <span style='color:red'>&nbsp;*</span>";
-				briefTag.innerHTML = me.optionMap["Reform Introduced_Brief"];
-				detailTag.innerHTML = me.optionMap["Reform Introduced_Detail"];
-				fileUploadTag.innerHTML = me.optionMap["Reform Introduced_File_Upload"];
-			} else if (advStageCode == "Advstages6") {
-				// Advanced
-				me.toggle(lessonsLearnedFieldTags, "none");
-				me.toggle(lessonsLearnedTranslationFieldTags, "none");
-				me.toggle(fileFieldtags, "");
-
-				reportDateTag.innerHTML = me.optionMap["Advanced_Date"] + " <span style='color:red'>&nbsp;*</span>";
-				briefTag.innerHTML = me.optionMap["Advanced_Brief"];
-				detailTag.innerHTML = me.optionMap["Advanced_Detail"];
-				fileUploadTag.innerHTML = me.optionMap["Advanced_File_Upload"];
-			} else if (advStageCode == "Advstages7") {
-				// Approved
-				me.toggle(lessonsLearnedFieldTags, "");
-				me.toggle(lessonsLearnedTranslationFieldTags, "");
-				me.toggle(fileFieldtags, "");
-
-				reportDateTag.innerHTML = me.optionMap["Approved_Date"] + " <span style='color:red'>&nbsp;*</span>";
-				briefTag.innerHTML = me.optionMap["Approved_Brief"];
-				detailTag.innerHTML = me.optionMap["Approved_Detail"];
-				fileUploadTag.innerHTML = me.optionMap["Approved_File_Upload"];
-				lessonsLearnedTag.innerHTML = me.optionMap["Approved_Lessons_Learned"];
-			} else if (advStageCode == "Advstages8") {
-				// Implemented
-				me.toggle(lessonsLearnedFieldTags, "");
-				me.toggle(lessonsLearnedTranslationFieldTags, "");
-				
-				me.toggle(fileFieldtags, "");
-
-				reportDateTag.innerHTML = me.optionMap["Implemented_Date"] + " <span style='color:red'>&nbsp;*</span>";
-				briefTag.innerHTML = me.optionMap["Implemented_Brief"];
-				detailTag.innerHTML = me.optionMap["Implemented_Detail"];
-				fileUploadTag.innerHTML = me.optionMap["Implemented_File_Upload"];
-			} else {
-				reportDateTag.innerHTML = "Report Date " + " <span style='color:red'>&nbsp;*</span>";
-				briefTag.innerHTML = "Brief";
-				detailTag.innerHTML = "Detail";
-				fileUploadTag.innerHTML = "File Upload";
-			}
-		};
-
-		me.addFormLogic_SRHRJRelatedTo = function (advTracker1NeedCode) {
-			var otherDetailsTags = document.getElementsByName(
-				"advTracker1NeedOtherField"
-			);
-			if (advTracker1NeedCode == "Other") {
-				me.toggle(otherDetailsTags, "");
-			} else {
-				me.toggle(otherDetailsTags, "none");
-			}
-		};
-
-		me.toggle = function (elements, displayState) {
-			for (var i = 0; i < elements.length; i++) {
-				elements[i].style.display = displayState;
-			}
-		};
-
-		me.loadData = function (url, exeFunc) {
-			var xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function () {
-				if (this.readyState == 4) {
-					if (this.status == 200) {
-						exeFunc(true, this);
-					} else {
-						exeFunc(false, this);
-					}
-				}
-			};
-			xhttp.open("GET", url, true); // "true" --> async
-			xhttp.send();
-		};
-
-		me.removeFiles = function () {
-			me.removeOneFile(me.FIELD_FILE_1_ID);
-			me.removeOneFile(me.FIELD_FILE_2_ID);
-			me.removeOneFile(me.FIELD_FILE_3_ID);
-			me.removeOneFile(me.FIELD_IMAGE_1_ID);
-			me.removeOneFile(me.FIELD_IMAGE_2_ID);
-			me.removeOneFile(me.FIELD_IMAGE_3_ID);
-		};
-
-		me.removeOneFile = function (fieldId) {
-			var buttonTag = document
-				.getElementById(fieldId)
-				.getElementsByTagName("button");
-			if (buttonTag.length > 0 && buttonTag[0].innerHTML == "Delete") {
-				setTimeout(function () {
-					buttonTag[0].click();
-				}, 100);
-			}
-		};
-
-		// --------------------------------------------
-		// RUN init
-
-		me.init();
-	}
+  console.log("============= START FORM ");
+  new AdvocacyWinsForm();
+
+  function AdvocacyWinsForm() {
+    var me = this;
+
+    me.openApp;
+    me.mode;
+
+    // --------------------------------------------
+    // Variables
+
+    me.DE_AVOCACY_STAGE_ID = "DTIsk9cDl8u";
+    me.DE_SRHRJ_RELATED_TO_ID = "sA82BaO7QQa";
+    me.OPTION_SET_TERMS_ID = "su0Xx7sHb1R";
+    me.ID_FOS_USER_GROUP = "uKgyk1wF8ME";
+
+    me.PARAMS_EVENT_ID = "@PARAMS_EVENT_ID";
+
+    me.keyDbLocale;
+
+    me.formLoadingDivTag = document.getElementById("formLoadingDiv");
+    me.advWinsFormTag = document.getElementById("advWinsForm");
+    // me.goBackToAppBtnTag = document.getElementById("goBackToAppBtn");
+
+    me.FIELD_AVOCACY_STAGE_ID =
+      "nTbcBfQZW9X-" + me.DE_AVOCACY_STAGE_ID + "-val";
+    me.FIELD_ASRHRJ_RELATED_TO_ID =
+      "nTbcBfQZW9X-" + me.DE_SRHRJ_RELATED_TO_ID + "-val";
+    me.FIELD_FILE_1_ID = "nTbcBfQZW9X-HQne4xhecd0-val";
+    me.FIELD_FILE_2_ID = "nTbcBfQZW9X-RlDreRbw0ms-val";
+    me.FIELD_FILE_3_ID = "nTbcBfQZW9X-lLqmr26KzfY-val";
+    me.FIELD_IMAGE_1_ID = "nTbcBfQZW9X-EfAIFxequNP-val";
+    me.FIELD_IMAGE_2_ID = "nTbcBfQZW9X-WdTQNq3sKxA-val";
+    me.FIELD_IMAGE_3_ID = "nTbcBfQZW9X-iMjmZpoX5og-val";
+
+    me.FIELD_DE_BRIEF_TRANSLATION = "nTbcBfQZW9X-zNfzVJXiFkG-val";
+    me.FIELD_DE_DETAILS_TRANSLATION = "nTbcBfQZW9X-xxfUP3OlqUQ-val";
+    me.FIELD_DE_LESSION_LEARNED_TRANSLATION = "nTbcBfQZW9X-Ob8sJOK5ChR-val";
+
+    // <deId>.<option display name> = code
+    me.deMap = {};
+    // <option-code> = <option-displayName>
+    me.optionMap = {};
+
+    me.eventData;
+
+    // --------------------------------------------
+    // URLs
+
+    me.QUERY_URL_USER = encodeURI("../api/me.json?fields=userGroups,settings");
+    me.QUERY_URL_DATA_ELEMENTS = encodeURI(
+      "../api/dataElements.json?fields=id,name,optionSet[options[displayName,code]]&filter=id:in:[" +
+        me.DE_AVOCACY_STAGE_ID +
+        "," +
+        me.DE_SRHRJ_RELATED_TO_ID +
+        "]&paging=false"
+    );
+    me.QUERY_URL_DATA_VALUES = encodeURI(
+      "../api/events/" + me.PARAMS_EVENT_ID + ".json"
+    );
+    me.QUERY_URL_OPTION_SET_TERMS = encodeURI(
+      "../api/optionSets/" +
+        me.OPTION_SET_TERMS_ID +
+        ".json?fields=options[code,displayName]&paging=false"
+    );
+
+    // --------------------------------------------
+    // init method
+
+    me.init = function () {
+      me.showForm(false);
+
+      me.openApp = me.getURLParameterByName(window.location.href, "openApp");
+      me.mode = me.getURLParameterByName(window.location.href, "mode");
+      // me.goBackToAppAfterEditing();
+
+      me.loadUserInfo(function (success) {
+        if (success) {
+          var fosScoringTag = document.querySelectorAll(
+            "[name='advFOSScoring']"
+          );
+          if (me.isFOSGroup) {
+            me.toggle(fosScoringTag, "");
+          } else {
+            me.toggle(fosScoringTag, "none");
+          }
+
+          // Load translation and init data
+          me.loadOptionSet(function (optionSetSuccess) {
+            if (optionSetSuccess) {
+              me.loadDataElements(function (responseSuccess, data) {
+                if (responseSuccess) {
+                  me.loadEventData(function (eventResponseData) {
+                    if (eventResponseData) {
+                      me.setUp_Events();
+                    }
+
+                    me.showForm(true);
+                  });
+                } else {
+                  me.showForm(true);
+                }
+              });
+            } else {
+              me.showForm(true);
+            }
+          });
+        } else {
+          me.showForm(true);
+        }
+      });
+    };
+
+    // For adding a new event, if the form is opened from the Application, then redirect to the app after adding the event
+    window.addEventListener("popstate", function () {
+      if (me.openApp != undefined && me.openApp == "true" && me.mode == "add") {
+        setTimeout(() => {
+          window.location.href =
+            "../../api/apps/AdvocacyTrackingTool/index.html";
+        }, 1000);
+      }
+    });
+
+    me.initEditForm = true;
+    // // For editing an event, if the form is opened from the Application, then redirect to the app after editing
+    // me.goBackToAppAfterEditing = function () {
+    // 	if (me.mode == "edit") {
+    // 		me.initEditForm = true;
+    // 	}
+
+    // 	if (
+    // 		me.openApp != undefined &&
+    // 		me.openApp == "true" &&
+    // 		me.mode == "edit"
+    // 	) {
+    // 		setInterval(function () {
+    // 			if (
+    // 				!me.initEditForm &&
+    // 				document.getElementsByTagName("input").length == 0
+    // 			) {
+    // 				me.goBackToAppBtnTag.click();
+    // 			} else if (document.getElementsByTagName("input").length > 0) {
+    // 				me.initEditForm = false;
+    // 			}
+    // 		}, 3000);
+    // 	}
+    // };
+
+    me.loadUserInfo = function (exeFunc) {
+      me.loadData(me.QUERY_URL_USER, function (success, response) {
+        if (success) {
+          const userData = JSON.parse(response.responseText);
+          me.keyDbLocale = userData.settings.keyDbLocale;
+          me.isFOSGroup =
+            userData.userGroups.filter(function (group) {
+              return group.id == me.ID_FOS_USER_GROUP;
+            }).length > 0;
+        }
+        exeFunc(success, response);
+      });
+    };
+
+    me.loadDataElements = function (exeFunc) {
+      me.loadData(me.QUERY_URL_DATA_ELEMENTS, function (success, response) {
+        if (success) {
+          const data = JSON.parse(response.responseText);
+          var deList = data.dataElements;
+          for (var i = 0; i < deList.length; i++) {
+            const de = deList[i];
+            me.deMap[de.id] = {};
+            if (de.optionSet) {
+              for (var j = 0; j < de.optionSet.options.length; j++) {
+                const option = de.optionSet.options[j];
+                me.deMap[de.id][option.displayName] = option.code;
+              }
+            }
+          }
+        }
+
+        exeFunc(success, response);
+      });
+    };
+
+    me.loadEventData = function (exeFunc) {
+      const eventId = me.getURLParameterByName(
+        window.location.href,
+        "viewEventId"
+      );
+
+      // Event existed
+      if (eventId !== undefined && eventId !== "") {
+        var url = me.QUERY_URL_DATA_VALUES;
+        url = url.replace(me.PARAMS_EVENT_ID, eventId);
+
+        me.loadData(url, function (success, response) {
+          if (success) {
+            const data = JSON.parse(response.responseText);
+            me.eventData = data;
+            // For "Adv Stage" field logic
+            const advStageValue = me.findItemFromList(
+              data.dataValues,
+              me.DE_AVOCACY_STAGE_ID,
+              "dataElement"
+            );
+            if (advStageValue != undefined) {
+              me.addFormLogic_AdvStage(advStageValue.value);
+            } else {
+              me.addFormLogic_AdvStage("");
+            }
+
+            // For "SRHRJ need is this related to?" logic
+            const asrhrjValue = me.findItemFromList(
+              data.dataValues,
+              me.DE_SRHRJ_RELATED_TO_ID,
+              "dataElement"
+            );
+            if (asrhrjValue != undefined) {
+              me.addFormLogic_SRHRJRelatedTo(asrhrjValue.value);
+            } else {
+              me.addFormLogic_SRHRJRelatedTo("");
+            }
+          }
+
+          exeFunc(success, response);
+        });
+      } // New event
+      else {
+        exeFunc(true);
+      }
+    };
+
+    me.loadOptionSet = function (exeFunc) {
+      me.loadData(me.QUERY_URL_OPTION_SET_TERMS, function (success, response) {
+        if (success) {
+          var options = JSON.parse(response.responseText).options;
+          for (var j in options) {
+            var option = options[j];
+            var value = option.displayName;
+            var code = option.code;
+
+            // Translate for some detault labels
+            var labelTag = me.getElementByKeyword("opt_c:" + code);
+            if (labelTag != null) {
+              labelTag.innerHTML = value;
+            }
+
+            me.optionMap[code] = value;
+          }
+
+          exeFunc(true);
+        } else {
+          exeFunc(false);
+        }
+      });
+    };
+
+    // --------------------------------------------
+    // Setup Events
+
+    me.setUp_Events = function () {
+      var advStageTag = document.getElementById(me.FIELD_AVOCACY_STAGE_ID);
+      advStageTag.addEventListener(
+        "DOMCharacterDataModified",
+        function (event) {
+          const advStageValueTags =
+            advStageTag.getElementsByClassName("Select-value-label");
+          const newValue =
+            advStageValueTags.length > 0
+              ? advStageValueTags[0].textContent
+              : "";
+          me.addFormLogic_AdvStage(me.deMap[me.DE_AVOCACY_STAGE_ID][newValue]);
+        },
+        false
+      );
+
+      advStageTag.addEventListener(
+        "DOMNodeInserted",
+        function (event) {
+          const advStageValueTags =
+            advStageTag.getElementsByClassName("Select-value-label");
+          if (advStageValueTags.length > 0) {
+            var selectedDisplayValue = advStageValueTags[0].textContent;
+            var selectedCode =
+              me.deMap[me.DE_AVOCACY_STAGE_ID][selectedDisplayValue];
+            me.addFormLogic_AdvStage(selectedCode);
+          } else {
+            me.addFormLogic_AdvStage("");
+          }
+        },
+        false
+      );
+
+      // Show / Hide "Other" field
+      var advASRHRJRelatedToTag = document.getElementById(
+        me.FIELD_ASRHRJ_RELATED_TO_ID
+      );
+      advASRHRJRelatedToTag.addEventListener(
+        "DOMCharacterDataModified",
+        function (event) {
+          const advValueTags =
+            advASRHRJRelatedToTag.getElementsByClassName("Select-value-label");
+          const newValue =
+            advValueTags.length > 0 ? advValueTags[0].textContent : "";
+          me.addFormLogic_SRHRJRelatedTo(
+            me.deMap[me.DE_SRHRJ_RELATED_TO_ID][newValue]
+          );
+        },
+        false
+      );
+
+      advASRHRJRelatedToTag.addEventListener(
+        "DOMNodeInserted",
+        function (event) {
+          const advStageValueTags =
+            advASRHRJRelatedToTag.getElementsByClassName("Select-value-label");
+          if (advStageValueTags.length > 0) {
+            var selectedDisplayValue = advStageValueTags[0].textContent;
+            var selectedCode =
+              me.deMap[me.DE_SRHRJ_RELATED_TO_ID][selectedDisplayValue];
+            me.addFormLogic_SRHRJRelatedTo(selectedCode);
+          } else {
+            me.addFormLogic_SRHRJRelatedTo("");
+          }
+        },
+        false
+      );
+    };
+
+    // --------------------------------------------
+    // Supportive methods
+
+    me.showForm = function (showed) {
+      if (showed) {
+        me.formLoadingDivTag.style.display = "none";
+        me.advWinsFormTag.style.display = "";
+      } else {
+        me.formLoadingDivTag.style.display = "";
+        me.advWinsFormTag.style.display = "none";
+      }
+    };
+
+    me.getURLParameterByName = function (url, name) {
+      name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(url);
+      return results == null
+        ? ""
+        : decodeURIComponent(results[1].replace(/\+/g, " "));
+    };
+
+    me.findItemFromList = function (list, value, propertyName) {
+      var item;
+
+      if (list) {
+        if (propertyName === undefined) {
+          propertyName = "id";
+        }
+
+        for (i = 0; i < list.length; i++) {
+          var listItem = list[i];
+
+          if (listItem[propertyName] == value) {
+            item = listItem;
+            break;
+          }
+        }
+      }
+
+      return item;
+    };
+
+    me.getElementByKeyword = function (key) {
+      return document.querySelector('[keyword="' + key + '"]');
+    };
+
+    me.addFormLogic_AdvStage = function (advStageCode) {
+      var lessonsLearnedFieldTags = document.getElementsByName(
+        "lessonsLearnedField"
+      );
+      var changeLevelUidFieldTag = document.getElementsByName(
+        "changeLevelUidField"
+      );
+      var changeTypeUidFieldTag =
+        document.getElementsByName("changeTypeUidField");
+      var periodOfTimeOrStatusFieldTag = document.getElementsByName(
+        "periodOfTimeOrStatusField"
+      );
+      var dateOfCompletionFieldTag = document.getElementsByName(
+        "dateOfCompletionField"
+      );
+      var briefTranslationFieldTags = document.querySelectorAll(`[id='${me.FIELD_DE_BRIEF_TRANSLATION}']`);
+      var detailsTranslationFieldTags = document.querySelectorAll(`[id='${me.FIELD_DE_DETAILS_TRANSLATION}']`);
+      var lessonsLearnedTranslationFieldTags = document.querySelectorAll(
+        `[id='${me.FIELD_DE_LESSION_LEARNED_TRANSLATION}']`
+      );
+      var fileFieldtags = document.getElementsByName("fileFields");
+
+
+      var reportDateTag = document
+        .querySelector("[data-test='dataentry-field-occurredAt']")
+        .getElementsByClassName("label_labelContainer__2mJzC")[0].lastChild;
+      var briefTag = me.getElementByKeyword("brief");
+      var detailTag = me.getElementByKeyword("detail");
+      var fileUploadTag = me.getElementByKeyword("fileUpload");
+      var lessonsLearnedTag = me.getElementByKeyword("lessonsLearned");
+
+      
+      me.toggle(lessonsLearnedTranslationFieldTags, "none");
+      if( me.isFOSGroup ) {
+        me.toggle(briefTranslationFieldTags, "");
+        me.toggle(detailsTranslationFieldTags, "");
+      }
+      else {
+        me.toggle(briefTranslationFieldTags, "none");
+        me.toggle(detailsTranslationFieldTags, "none");
+      }
+
+      // me.toggle(briefTranslationFieldTags, "none");
+      // me.toggle(detailsTranslationFieldTags, "none");
+      // me.toggle(lessonsLearnedTranslationFieldTags, "none");
+
+      // lessonsLearnedTag.html("Lessons Learned"); // Default value
+
+      if (advStageCode == "Advstages1") {
+        // Contribution
+        me.toggle(lessonsLearnedFieldTags, "none");
+        // me.toggle(lessonsLearnedTranslationFieldTags, "none");
+        me.toggle(changeLevelUidFieldTag, "none");
+        me.toggle(changeTypeUidFieldTag, "none");
+        me.toggle(fileFieldtags, "");
+        me.toggle(periodOfTimeOrStatusFieldTag, "");
+        me.toggle(dateOfCompletionFieldTag, "");
+
+        reportDateTag.innerHTML =
+          me.optionMap["Contribution_Date"] +
+          " <span style='color:red'>&nbsp;*</span>";
+        briefTag.innerHTML = me.optionMap["Contribution_Brief"];
+
+        detailTag.innerHTML = me.optionMap["Contribution_Detail"];
+        fileUploadTag.innerHTML = me.optionMap["Contribution_File_Upload"];
+      } else if (advStageCode == "Advstages2") {
+        // Regression Introduced"
+        me.toggle(lessonsLearnedFieldTags, "none");
+        // me.toggle(lessonsLearnedTranslationFieldTags, "none");
+        me.toggle(periodOfTimeOrStatusFieldTag, "none");
+        me.toggle(dateOfCompletionFieldTag, "none");
+        me.toggle(changeLevelUidFieldTag, "");
+        me.toggle(changeTypeUidFieldTag, "");
+        me.toggle(fileFieldtags, "");
+
+        reportDateTag.innerHTML =
+          me.optionMap["Regression Introduced_Date"] +
+          " <span style='color:red'>&nbsp;*</span>";
+        briefTag.innerHTML = me.optionMap["Regression Introduced_Brief"];
+        detailTag.innerHTML = me.optionMap["Regression Introduced_Detail"];
+        fileUploadTag.innerHTML =
+          me.optionMap["Regression Introduced_File_Upload"];
+      } else if (advStageCode == "Advstages4") {
+        //Loss
+        me.toggle(periodOfTimeOrStatusFieldTag, "none");
+        me.toggle(dateOfCompletionFieldTag, "none");
+
+        me.toggle(lessonsLearnedFieldTags, "");
+        if(me.isFOSGroup) me.toggle(lessonsLearnedTranslationFieldTags, "");
+
+        me.toggle(changeLevelUidFieldTag, "");
+        me.toggle(changeTypeUidFieldTag, "");
+        me.toggle(fileFieldtags, "");
+
+        reportDateTag.innerHTML =
+          me.optionMap["Loss_Date"] + " <span style='color:red'>&nbsp;*</span>";
+        briefTag.innerHTML = me.optionMap["Loss_Brief"];
+        detailTag.innerHTML = me.optionMap["Loss_Detail"];
+        lessonsLearnedTag.innerHTML = me.optionMap["Loss_Lessons_Learned"];
+        fileUploadTag.innerHTML = me.optionMap["Loss_File_Upload"];
+      } else if (advStageCode == "Advstages3") {
+        // Defended
+        me.toggle(periodOfTimeOrStatusFieldTag, "none");
+        me.toggle(dateOfCompletionFieldTag, "none");
+
+        me.toggle(lessonsLearnedFieldTags, "");
+        if(me.isFOSGroup) me.toggle(lessonsLearnedTranslationFieldTags, "");
+
+        me.toggle(changeLevelUidFieldTag, "");
+        me.toggle(changeTypeUidFieldTag, "");
+        me.toggle(fileFieldtags, "");
+
+        // Set the translations
+        reportDateTag.innerHTML =
+          me.optionMap["Defended_Date"] +
+          " <span style='color:red'>&nbsp;*</span>";
+        briefTag.innerHTML = me.optionMap["Defended_Brief"];
+        detailTag.innerHTML = me.optionMap["Defended_Detail"];
+        lessonsLearnedTag.innerHTML = me.optionMap["Defended_Lessons_Learned"];
+        fileUploadTag.innerHTML = me.optionMap["Defended_File_Upload"];
+      } else if (advStageCode == "Advstages5") {
+        // Reform Introduced
+        me.toggle(periodOfTimeOrStatusFieldTag, "none");
+        me.toggle(dateOfCompletionFieldTag, "none");
+        me.toggle(lessonsLearnedFieldTags, "none");
+        // me.toggle(lessonsLearnedTranslationFieldTags, "none");
+        me.toggle(changeLevelUidFieldTag, "");
+        me.toggle(changeTypeUidFieldTag, "");
+        me.toggle(fileFieldtags, "");
+
+        reportDateTag.innerHTML =
+          me.optionMap["Reform Introduced_Date"] +
+          " <span style='color:red'>&nbsp;*</span>";
+        briefTag.innerHTML = me.optionMap["Reform Introduced_Brief"];
+        detailTag.innerHTML = me.optionMap["Reform Introduced_Detail"];
+        fileUploadTag.innerHTML = me.optionMap["Reform Introduced_File_Upload"];
+      } else if (advStageCode == "Advstages6") {
+        // Advanced
+        me.toggle(lessonsLearnedFieldTags, "none");
+        // me.toggle(lessonsLearnedTranslationFieldTags, "none");
+        me.toggle(fileFieldtags, "");
+
+        reportDateTag.innerHTML =
+          me.optionMap["Advanced_Date"] +
+          " <span style='color:red'>&nbsp;*</span>";
+        briefTag.innerHTML = me.optionMap["Advanced_Brief"];
+        detailTag.innerHTML = me.optionMap["Advanced_Detail"];
+        fileUploadTag.innerHTML = me.optionMap["Advanced_File_Upload"];
+      } else if (advStageCode == "Advstages7") {
+        // Approved
+        me.toggle(lessonsLearnedFieldTags, "");
+        if(me.isFOSGroup) me.toggle(lessonsLearnedTranslationFieldTags, "");
+        me.toggle(fileFieldtags, "");
+
+        reportDateTag.innerHTML =
+          me.optionMap["Approved_Date"] +
+          " <span style='color:red'>&nbsp;*</span>";
+        briefTag.innerHTML = me.optionMap["Approved_Brief"];
+        detailTag.innerHTML = me.optionMap["Approved_Detail"];
+        fileUploadTag.innerHTML = me.optionMap["Approved_File_Upload"];
+        lessonsLearnedTag.innerHTML = me.optionMap["Approved_Lessons_Learned"];
+      } else if (advStageCode == "Advstages8") {
+        // Implemented
+        me.toggle(lessonsLearnedFieldTags, "");
+        if(me.isFOSGroup) me.toggle(lessonsLearnedTranslationFieldTags, "");
+
+        me.toggle(fileFieldtags, "");
+
+        reportDateTag.innerHTML =
+          me.optionMap["Implemented_Date"] +
+          " <span style='color:red'>&nbsp;*</span>";
+        briefTag.innerHTML = me.optionMap["Implemented_Brief"];
+        detailTag.innerHTML = me.optionMap["Implemented_Detail"];
+        fileUploadTag.innerHTML = me.optionMap["Implemented_File_Upload"];
+      } else {
+        reportDateTag.innerHTML =
+          "Report Date " + " <span style='color:red'>&nbsp;*</span>";
+        briefTag.innerHTML = "Brief";
+        detailTag.innerHTML = "Detail";
+        fileUploadTag.innerHTML = "File Upload";
+      }
+    };
+
+    me.addFormLogic_SRHRJRelatedTo = function (advTracker1NeedCode) {
+      var otherDetailsTags = document.getElementsByName(
+        "advTracker1NeedOtherField"
+      );
+      if (advTracker1NeedCode == "Other") {
+        me.toggle(otherDetailsTags, "");
+      } else {
+        me.toggle(otherDetailsTags, "none");
+      }
+    };
+
+    me.toggle = function (elements, displayState) {
+      for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display = displayState;
+      }
+    };
+
+    me.loadData = function (url, exeFunc) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4) {
+          if (this.status == 200) {
+            exeFunc(true, this);
+          } else {
+            exeFunc(false, this);
+          }
+        }
+      };
+      xhttp.open("GET", url, true); // "true" --> async
+      xhttp.send();
+    };
+
+    me.removeFiles = function () {
+      me.removeOneFile(me.FIELD_FILE_1_ID);
+      me.removeOneFile(me.FIELD_FILE_2_ID);
+      me.removeOneFile(me.FIELD_FILE_3_ID);
+      me.removeOneFile(me.FIELD_IMAGE_1_ID);
+      me.removeOneFile(me.FIELD_IMAGE_2_ID);
+      me.removeOneFile(me.FIELD_IMAGE_3_ID);
+    };
+
+    me.removeOneFile = function (fieldId) {
+      var buttonTag = document
+        .getElementById(fieldId)
+        .getElementsByTagName("button");
+      if (buttonTag.length > 0 && buttonTag[0].innerHTML == "Delete") {
+        setTimeout(function () {
+          buttonTag[0].click();
+        }, 100);
+      }
+    };
+
+    // --------------------------------------------
+    // RUN init
+
+    me.init();
+  }
 </script>
